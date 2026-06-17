@@ -30,6 +30,50 @@ The screen is successful when a new visitor can say, within five seconds:
 
 If the page only communicates mood, it fails. If it only communicates utility, it is forgettable. V0 needs both: a mythic first impression and a legible work system.
 
+## Golden First Screen
+
+The best V0 screen should be understandable as a still image.
+
+It should contain this exact logic:
+
+```text
+LOGOS
+Word made operational.
+Execution harness for Affine intelligence.
+
+Composer
+Give LOGOS a goal...
+
+Active run
+status: ready / planning / validating
+
+Loop
+plan -> act -> observe -> validate
+
+Machine
+environment: available
+current action: none / running command / collecting output
+
+Memory / Skill
+project context loaded
+reusable procedure suggested or available
+
+Artifact
+draft plan, changed file, report, itinerary, validation summary, or placeholder
+
+Trace
+sources, commands, files, validation, risks
+
+Controls
+pause / inspect / approve / stop
+```
+
+The screen can be arranged differently, but it must preserve the logic. If the first screen cannot be read this way, the design is not yet LOGOS.
+
+The single most important composition rule:
+
+> The LOGOS title creates belief; the surrounding instrumentation earns it.
+
 ## Primary URL
 
 The direct route is:
@@ -659,6 +703,38 @@ Score interpretation:
 - 19-20: 10/10 direction
 
 Do not call a screen 10/10 unless it scores at least 19 and earns 2 points in Identity, Action, Proof, and Honesty.
+
+## Review Checklist
+
+Before calling a LOGOS V0 mock complete, answer these aloud:
+
+1. What is the user goal on this screen?
+2. What is LOGOS doing right now?
+3. What loop phase is active?
+4. What tool or machine can be seen?
+5. What artifact exists or is being produced?
+6. What evidence or trace can be inspected?
+7. What has been validated?
+8. What remains uncertain?
+9. What can the user approve, pause, inspect, or stop?
+10. What makes this unmistakably LOGOS rather than a generic agent UI?
+
+If any answer requires a long explanation, the screen is not clear enough.
+
+## Mobile Standard
+
+Mobile can compress the console, but it cannot remove the product truth.
+
+Required mobile behavior:
+
+- LOGOS identity remains visible in the opening view.
+- The composer still asks for a goal.
+- Run state and loop phase appear as compact status controls.
+- Artifact and trace are reachable from the first view.
+- Approval/stop controls are never buried behind deep navigation.
+- Memory/skill state may collapse into a compact drawer or status chip.
+
+Mobile fails if it becomes a plain chat screen.
 
 ## Information Architecture
 

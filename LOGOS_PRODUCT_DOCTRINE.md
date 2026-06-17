@@ -10,6 +10,55 @@ The mythic center:
 
 > Word made operational.
 
+## One-Page Canon
+
+If the rest of this doctrine is ignored, keep this.
+
+LOGOS is Affine intelligence made operational. It is not a chatbot, mascot, oracle, or generic agent wrapper. It is the harness that turns a user's words into governed execution: plan, tool use, machine work, memory, reusable procedure, artifact, trace, validation, and control.
+
+The brand equation:
+
+```text
+LOGOS = Word + Work + Witness
+```
+
+- **Word**: the user's intent enters as language.
+- **Work**: the harness turns intent into action through tools, loops, and machines.
+- **Witness**: traces, artifacts, and validation prove what happened.
+
+The highest-order promise:
+
+> Bring a goal. LOGOS turns it into accountable work.
+
+The highest-order refusal:
+
+> LOGOS must never hide behind fluent language when proof, state, or user control is required.
+
+The product must always make these visible:
+
+1. the goal
+2. the plan
+3. the current run state
+4. the loop phase
+5. the tool or machine action
+6. the memory or skill context
+7. the artifact
+8. the trace
+9. the validation state
+10. the user control
+
+The brand must always feel:
+
+- mythic, but not mystical
+- powerful, but bounded
+- alive through state, not claims
+- intelligent through proof, not performance
+- distinct from Affine, but born from the same grammar
+
+The shortest possible version:
+
+> Word made operational. Affine intelligence with hands, memory, proof, and control.
+
 ## Executive Summary
 
 LOGOS should be understood as a cloud execution harness, not a chatbot.
@@ -843,6 +892,23 @@ A 10/10 LOGOS execution does all of this at once:
 10. The screen would still make sense if all marketing copy were removed.
 
 A design that is beautiful but fails proof is not 10/10. A design that is useful but has no symbolic force is not 10/10. LOGOS needs both: myth at the surface, mechanism underneath.
+
+## Kill Criteria
+
+Reject a LOGOS direction if any of these are true:
+
+- it could pass as a generic AI chat product after swapping the logo
+- it relies on grand language without visible work state
+- it makes autonomy feel unbounded or uncontrollable
+- it treats memory as hidden magic instead of user-visible context
+- it claims learning, evolution, life, or consciousness without a concrete mechanism
+- it leads with infrastructure before user value
+- it uses gold, myth, or motion as decoration rather than validation
+- it hides traces, artifacts, or approval boundaries
+- it makes LOGOS feel like a mascot instead of an operating principle
+- it cannot explain how a user goal becomes an inspected result
+
+These are not style preferences. They are identity failures.
 
 ## Open Decisions
 
