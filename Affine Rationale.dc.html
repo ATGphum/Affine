@@ -31,6 +31,20 @@
   a{ color:inherit; }
   @media print{ .ds-topbar{ display:none !important; } .ds-section{ break-inside:avoid; break-after:page; min-height:100vh; } body{ background:#1c1c1c !important; } }
   @page{ size:1280px 720px; margin:0; }
+  @media (max-width:700px){
+    .ds-topbar{ padding:10px 14px !important; gap:12px !important; }
+    .ds-section{ padding:46px 16px !important; }
+    .ds-section h1{ font-size:clamp(38px,11vw,56px) !important; }
+    .ds-section h2{ font-size:24px !important; }
+    [data-ds-subnav]{ overflow-x:auto !important; flex-wrap:nowrap !important; -webkit-overflow-scrolling:touch; }
+    [style*="repeat(2,"],
+    [style*="repeat(3,"],
+    [style*="repeat(4,"],
+    [style*="repeat(5,"],
+    [style*="1fr 1fr"],
+    [style*="130px 1fr"],
+    [style*="48px 1.5fr"]{ grid-template-columns:1fr !important; gap:10px !important; }
+  }
 </style>
 </helmet>
 
