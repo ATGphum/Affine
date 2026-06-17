@@ -40,7 +40,8 @@
     .ds-section{ padding:46px 16px !important; }
     .ds-section h1{ font-size:clamp(38px,11vw,56px) !important; }
     .ds-section h2{ font-size:24px !important; }
-    [data-ds-subnav]{ overflow-x:auto !important; flex-wrap:nowrap !important; -webkit-overflow-scrolling:touch; }
+    [data-ds-subnav]{ min-height:43px !important; overflow-x:auto !important; flex-wrap:nowrap !important; align-items:center !important; -webkit-overflow-scrolling:touch; }
+    [data-ds-subnav] > *{ flex:0 0 auto !important; white-space:nowrap !important; }
     [style*="repeat(2,"],
     [style*="repeat(3,"],
     [style*="repeat(4,"],
