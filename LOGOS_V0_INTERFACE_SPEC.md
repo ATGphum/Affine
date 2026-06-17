@@ -12,6 +12,12 @@ LOGOS V0 must prove one thing:
 
 The page must show that chat is only the control surface. The visible product is a structured system around the model: goal, run, loop, tool use, remote execution, memory, reusable procedure, artifact, trace, and validation.
 
+The emotional thesis:
+
+> Word made operational.
+
+The interface should make that line believable. A user enters words; the console turns them into structured work with state, evidence, and artifacts.
+
 ## Primary URL
 
 The direct route is:
@@ -46,6 +52,45 @@ Within the first viewport, a user must understand:
 8. The user can inspect, approve, pause, or stop.
 
 If those eight things are not visible or strongly implied, the page is not doing its job.
+
+## First-Viewport Identity
+
+The first viewport must balance myth and proof.
+
+Myth says:
+
+- this is LOGOS
+- word becomes work here
+- the product has its own identity, not just Affine navigation
+- the user is entering an operational surface
+
+Proof says:
+
+- a run is active or ready
+- a loop has phases
+- tools and machines exist
+- memory and skills exist
+- artifacts and traces exist
+- validation is visible
+
+The first viewport should not choose between these. It should feel iconic at a glance and functional after two seconds of inspection.
+
+Required identity stack:
+
+```text
+LOGOS
+Word made operational.
+Execution harness for Affine intelligence.
+```
+
+Optional shorter stack:
+
+```text
+LOGOS
+Reason becomes execution.
+```
+
+The LOGOS wordmark may be large, but it cannot be the only thing carrying the screen. The page must immediately show the machinery of action around it.
 
 ## Screen Anatomy
 
@@ -119,6 +164,55 @@ Required modules:
 - Trace / validation.
 
 The right rail is the difference between LOGOS and a chatbot. It should show the operational system around the model.
+
+## Mythic Interface Layer
+
+LOGOS should feel mythic through product structure, not decoration.
+
+The desired feeling is an operational ritual: a goal enters, a plan forms, tools move, machines run, evidence accumulates, and an artifact is sealed as validated. This should feel alive because the system has state and consequence, not because the UI claims consciousness.
+
+Use these interface metaphors:
+
+- **Invocation**: the composer where the user gives LOGOS a goal.
+- **Hand**: the tool/machine activity that shows intelligence reaching into the world.
+- **Loop**: plan, act, observe, validate, continue.
+- **Witness**: trace, logs, citations, test output, screenshots, diffs.
+- **Seal**: validated state, expressed with restrained gold.
+- **Artifact**: the thing returned to the user.
+
+Do not use:
+
+- literal deity illustrations
+- angel, messenger, wing, or Hermes-like cues
+- consciousness claims
+- self-evolving claims
+- generic neon AI atmosphere
+- magical symbols as the primary proof of capability
+
+The first-screen composition should communicate:
+
+1. LOGOS has a name with weight.
+2. LOGOS can receive a goal.
+3. LOGOS can operate.
+4. LOGOS can prove what it did.
+
+## Hero / Console Composition
+
+If V0 keeps a centered LOGOS title, it must be embedded inside the console rather than floating like a landing page hero.
+
+Recommended layout:
+
+- large LOGOS wordmark centered in the work field
+- myth line below it: `Word made operational.`
+- product line below it: `Execution harness for Affine intelligence.`
+- composer directly under the identity stack
+- left rail showing continuity: threads, machines, memory, skills
+- right rail showing action: active run, loop, machine, artifact, trace
+- subtle field/background that feels infrastructural, not decorative
+
+The title can be grand. The surrounding UI must be concrete.
+
+The page should avoid looking like a pure terminal. LOGOS is not only a shell. It is a chat-controlled work environment with traces, artifacts, approvals, procedures, and remote execution state.
 
 ## V0 Canonical Demo
 
@@ -356,6 +450,23 @@ Alternate:
 
 `Affine intelligence scaffolded with tools, memory, machines, and loops.`
 
+### Myth Line
+
+Preferred:
+
+`Word made operational.`
+
+Alternates:
+
+- `Reason becomes execution.`
+- `Bring a goal. LOGOS turns it into work.`
+
+Avoid:
+
+- `The agent awakens.`
+- `Self-evolving intelligence.`
+- `A conscious AI worker.`
+
 ### Input Placeholder
 
 Preferred:
@@ -408,6 +519,8 @@ Required visual qualities:
 
 - dense but readable
 - dark carbon world
+- iconic LOGOS identity in the first viewport
+- mythic line paired with operational proof
 - gold only for validated or inherited state
 - restrained borders
 - mono labels for operational state
@@ -422,6 +535,13 @@ Use motion sparingly:
 - tool activity indicator
 - validation confirmation
 
+Use atmosphere sparingly:
+
+- subtle field texture
+- low-contrast traces or arcs that imply work moving through a system
+- background image or surface only when it does not reduce legibility
+- no one-note blue/purple agent glow
+
 Avoid:
 
 - big marketing hero
@@ -429,6 +549,8 @@ Avoid:
 - chat bubbles as the only structure
 - mystical symbols as primary proof
 - decorative partner/infrastructure strip
+- Hermes-like messenger/wing motifs
+- consciousness or life claims presented as product facts
 
 ## Information Architecture
 
@@ -464,6 +586,9 @@ The LOGOS page is acceptable when:
 13. The UI does not name specific subnets by default.
 14. The UI avoids "self-evolving" language.
 15. The page communicates that LOGOS can act.
+16. The first viewport includes the LOGOS identity stack or an equally strong equivalent.
+17. Mythic language is paired with visible run, loop, artifact, and trace proof.
+18. The UI avoids literal consciousness, sentience, or "alive" claims.
 
 ## Do Not Ship
 
@@ -479,6 +604,8 @@ Do not ship a LOGOS page that:
 - has no approval or stop affordance
 - uses gold as decoration
 - feels like an Affine docs page instead of a product console
+- treats mythic style as a substitute for visible execution state
+- copies Hermes/messenger cues instead of owning the LOGOS ordering-principle lane
 
 ## V0 Priority
 

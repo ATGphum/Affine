@@ -6,6 +6,10 @@ Chat is the control surface. The product is the scaffold around Affine models: p
 
 LOGOS gives Affine intelligence a managed environment for doing work.
 
+The mythic center:
+
+> Word made operational.
+
 ## Executive Summary
 
 LOGOS should be understood as a cloud execution harness, not a chatbot.
@@ -19,6 +23,10 @@ The essential product claim:
 The essential brand claim:
 
 > LOGOS is Affine intelligence scaffolded into action.
+
+The essential mythic claim:
+
+> Reason becomes execution.
 
 The essential technical claim:
 
@@ -69,6 +77,97 @@ Avoid these descriptions:
 - Decentralized services marketplace.
 
 LOGOS should never sound like a thin UI over an LLM. It should also never sound like it can bypass the hard parts of agency through vague words like "self-evolving." The product is powerful because it is scaffolded, observable, and operational.
+
+## Mythic Layer
+
+LOGOS should have mythic force, but the myth must stay product-honest.
+
+The myth is not that LOGOS is conscious, alive, divine, or magically self-improving. The myth is that language can become reliable work. A user gives a goal as words; LOGOS turns those words into plan, action, evidence, memory, artifact, and next step.
+
+The center of the identity:
+
+> Word made operational.
+
+The center of the product:
+
+> The execution harness for Affine intelligence.
+
+Those two lines should travel together. The first gives LOGOS symbolic weight. The second keeps the symbol anchored in what the product actually does.
+
+LOGOS should feel less like a mascot and more like an ordering principle that has become usable. It is not a character standing beside the user. It is the structure through which intelligence becomes work.
+
+### Hermes Contrast
+
+Hermes can own the messenger, guide, agent, and companion archetype. LOGOS should not try to be a darker or louder version of that. LOGOS should own a different archetype:
+
+- not messenger, but ordering principle
+- not companion, but operational scaffold
+- not oracle, but witnessable execution
+- not charm, but discipline
+- not self-evolution as a slogan, but accumulated procedure and validated memory
+
+This gives LOGOS its own lane. It can share underlying DNA with Affine while becoming a distinct product identity: Affine is the intelligence field; LOGOS is the field given hands, tools, memory, and proof.
+
+### Symbolic Primitives
+
+Use these as the symbolic language of LOGOS:
+
+- **Word**: intent entering the system.
+- **Plan**: reason taking shape.
+- **Hand**: intelligence reaching into tools and machines.
+- **Loop**: action checked by observation and validation.
+- **Witness**: a trace that proves what happened.
+- **Seal**: validated state; gold belongs here.
+- **Artifact**: work made visible.
+- **Memory**: durable context, not a mystical soul.
+- **Skill**: remembered procedure that can be reused.
+- **Machine**: the operating body where work happens.
+
+The product should make these primitives visible in interface, copy, and page structure. If LOGOS says it can act, the user should see the hand, the loop, the witness, and the artifact.
+
+### Life And Consciousness Language
+
+LOGOS may borrow from life-centered language only when it describes structure, continuity, or responsiveness:
+
+- living workspace
+- active memory
+- compounding procedure
+- field of work
+- operating body
+- trace of thought and action
+
+Avoid literal claims:
+
+- conscious
+- sentient
+- alive
+- self-aware
+- autonomous mind
+- digital organism
+
+The design can feel alive through state, rhythm, memory, and consequence. It should not claim life as a property.
+
+### Mythic Copy Rules
+
+Good:
+
+- "Word made operational."
+- "Reason becomes execution."
+- "Bring a goal. LOGOS turns it into work."
+- "Affine intelligence with hands."
+- "Every run leaves a trace."
+- "Validated work, not fluent guesses."
+
+Bad:
+
+- "LOGOS is alive."
+- "The agent awakens."
+- "Self-evolving intelligence."
+- "An omniscient AI worker."
+- "A divine machine."
+- "The brain of everything."
+
+LOGOS can be mythic in posture and precise in claim. That tension is the advantage.
 
 ## North Star
 
@@ -460,6 +559,8 @@ Inherited from Affine:
 
 Distinct to LOGOS:
 
+- large LOGOS wordmark as first-viewport identity
+- "word made operational" as the mythic line
 - console-like density
 - live status instrumentation
 - visible execution loops
@@ -475,9 +576,21 @@ The visual feel should be:
 - precise
 - operational
 - alive
+- mythic without mysticism
 - durable
 - infrastructural
 - trustworthy
+
+The strongest visual direction is an operational ritual: a dark field, a command surface, visible instruments, and proof. It should feel like entering a place where words become actions, not reading a page about an agent.
+
+Use myth through structure:
+
+- a strong wordmark, not a mascot
+- traces and run lines, not decorative symbols
+- gold as validation seal, not ornament
+- panels as instruments, not marketing cards
+- motion as work state, not atmosphere
+- imagery as field/body/machine, not deity or fantasy scene
 
 Avoid:
 
@@ -488,6 +601,8 @@ Avoid:
 - heavy purple-blue agent aesthetics
 - chat bubbles as the only visual language
 - "self-evolving" visual tropes without a concrete mechanism
+- literal gods, angels, messengers, or copied Hermes cues
+- consciousness imagery that implies sentience
 
 ## Validation Grammar
 
