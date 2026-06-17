@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html{ scroll-behavior:smooth; }
+  .ds-section{ scroll-margin-top:120px; }
+  body{ margin:0; background:#1c1c1c; color:#e5e5e5; font-family:'Geist',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  ::selection{ background:#f3c449; color:#1a1500; }
+  a{ color:inherit; }
+  @keyframes ds-lane{ 0%,100%{ opacity:.2; transform:scaleX(.5);} 45%{ opacity:.85; transform:scaleX(1);} }
+  @media print{
+    .ds-topbar{ display:none !important; }
+    .ds-section{ break-inside:avoid; break-after:page; min-height:100vh; }
+    body{ background:#1c1c1c !important; }
+  }
+  @page{ size:1280px 720px; margin:0; }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="position:relative; min-height:100vh; background:#1c1c1c; isolation:isolate;">
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="ds-topbar" style="position:sticky; top:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:12px 28px; background:rgba(24,24,24,.82); backdrop-filter:blur(16px); border-bottom:1px solid #ffffff12;">
+    <div style="display:flex; align-items:center; gap:11px;">
+      <img src="assets/affine-small-mark.svg" alt="" style="width:22px; height:22px; filter:drop-shadow(0 0 8px rgba(243,196,73,.18));">
+      <span style="font-weight:700; font-size:16px; letter-spacing:-.01em;">Affine</span>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; border-left:1px solid #ffffff1f; padding-left:11px;">Design System</span>
+    </div>
+    <button onClick="{{ doPrint }}" style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#1a1500; background:linear-gradient(180deg,#ffd55e,#f3c449); border:1px solid rgba(243,196,73,.5); padding:8px 13px; border-radius:7px; cursor:pointer;">Print / PDF</button>
+  </div>
+
+  <!-- section sub-nav · persists when embedded (topbar removed) -->
+  <div data-ds-subnav style="position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:4px; flex-wrap:wrap; padding:9px 28px; background:rgba(20,20,20,.92); backdrop-filter:blur(14px); border-bottom:1px solid #ffffff0f;">
+    <span style="font-family:'Geist Mono',monospace; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:#e5e5e540; margin-right:8px;">Sections</span>
+    <a href="#foundations" style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#a1a1a1; text-decoration:none; padding:6px 9px; border-radius:6px;" style-hover="background:#ffffff0f; color:#e5e5e5;">Foundations</a>
+    <a href="#color" style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#a1a1a1; text-decoration:none; padding:6px 9px; border-radius:6px;" style-hover="background:#ffffff0f; color:#e5e5e5;">Color</a>
+    <a href="#type" style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#a1a1a1; text-decoration:none; padding:6px 9px; border-radius:6px;" style-hover="background:#ffffff0f; color:#e5e5e5;">Type</a>
+    <a href="#space" style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#a1a1a1; text-decoration:none; padding:6px 9px; border-radius:6px;" style-hover="background:#ffffff0f; color:#e5e5e5;">Space</a>
+    <a href="#components" style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#a1a1a1; text-decoration:none; padding:6px 9px; border-radius:6px;" style-hover="background:#ffffff0f; color:#e5e5e5;">Components</a>
+    <a href="#icons" style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#a1a1a1; text-decoration:none; padding:6px 9px; border-radius:6px;" style-hover="background:#ffffff0f; color:#e5e5e5;">Icons</a>
+    <a href="#voice" style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#a1a1a1; text-decoration:none; padding:6px 9px; border-radius:6px;" style-hover="background:#ffffff0f; color:#e5e5e5;">Voice</a>
+  </div>
+
+  <!-- ================= COVER ================= -->
+  <section class="ds-section" style="position:relative; max-width:1180px; margin:0 auto; padding:90px 40px 70px; overflow:hidden;">
+    <div style="position:absolute; inset:0; z-index:0; pointer-events:none; background:radial-gradient(circle at 78% 12%, rgba(243,196,73,.07), transparent 42%), radial-gradient(circle at 14% 90%, rgba(118,102,245,.06), transparent 46%);"></div>
+    <div style="position:relative; z-index:1;">
+      <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#f3c449; display:flex; align-items:center; gap:10px; margin-bottom:30px;">
+        <span style="width:7px; height:7px; border-radius:50%; background:#f3c449; box-shadow:0 0 14px rgba(243,196,73,.4);"></span>Anima Machina · v1.0
+      </div>
+      <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(56px,8.5vw,116px); line-height:.94; letter-spacing:-.01em; margin:0 0 26px;">The design system,<br>made measurable.</h1>
+      <p style="font-size:clamp(17px,1.6vw,21px); line-height:1.55; color:#a1a1a1; max-width:34em; margin:0 0 44px;">A living reference for the Affine identity — every token, type role and component documented from the source. Carbon is the world, bone is the readable layer, gold is inherited proof. Click any value to copy it.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1px; border:1px solid #ffffff14; border-radius:10px; overflow:hidden; background:#ffffff0d;">
+        <div style="background:#1f1f1f; padding:18px 20px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e5e5e573; margin-bottom:9px;">Type</div><div style="font-size:14px; color:#e5e5e5;">Geist · Geist Mono · Instrument Serif</div></div>
+        <div style="background:#1f1f1f; padding:18px 20px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e5e5e573; margin-bottom:9px;">Environment</div><div style="font-size:14px; color:#e5e5e5;">Carbon <span style="font-family:'Geist Mono',monospace; color:#a1a1a1;">#1c1c1c</span></div></div>
+        <div style="background:#1f1f1f; padding:18px 20px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e5e5e573; margin-bottom:9px;">Validation</div><div style="font-size:14px; color:#f3c449;">Gold <span style="font-family:'Geist Mono',monospace; color:#a1a1a1;">#f3c449</span></div></div>
+        <div style="background:#1f1f1f; padding:18px 20px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e5e5e573; margin-bottom:9px;">Grammar</div><div style="font-size:14px; color:#e5e5e5;">Recursive Frontier</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOUNDATIONS ================= -->
+  <section id="foundations" class="ds-section" style="max-width:1180px; margin:0 auto; padding:70px 40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #ffffff14; padding-bottom:18px; margin-bottom:40px;">
+      <div style="display:flex; align-items:baseline; gap:18px;"><span style="font-family:'Geist Mono',monospace; font-size:13px; color:#f3c449; letter-spacing:.1em;">01</span><h2 style="font-size:34px; font-weight:600; letter-spacing:-.02em; margin:0;">Foundations</h2></div>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#e5e5e573;">Recursive Frontier</span>
+    </div>
+    <p style="font-size:16px; line-height:1.6; color:#a1a1a1; max-width:46em; margin:0 0 36px;">Every Affine surface is assembled from the same primitives. A table row is never just a row — it is a candidate, a memory, a winner, a failed path or an inherited state. If a visual element can't be mapped to a primitive, it is decorative.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:#ffffff0d; border:1px solid #ffffff14; border-radius:10px; overflow:hidden; margin-bottom:14px;">
+      <div style="background:#1f1f1f; padding:20px 18px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#7666f5; margin-bottom:14px;">Candidate</div><p style="font-size:13px; line-height:1.55; color:#a1a1a1; margin:0;">Independent capabilities entering — rows, traces, challenger marks.</p></div>
+      <div style="background:#1f1f1f; padding:20px 18px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#ff9b4e; margin-bottom:14px;">Pressure</div><p style="font-size:13px; line-height:1.55; color:#a1a1a1; margin:0;">Shared constraints that make work comparable — axes, rubrics, thresholds.</p></div>
+      <div style="background:#1f1f1f; padding:20px 18px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#44ff9a; margin-bottom:14px;">Reinforcement</div><p style="font-size:13px; line-height:1.55; color:#a1a1a1; margin:0;">Useful paths strengthening — heavier lines, improving series.</p></div>
+      <div style="background:#1f1f1f; padding:20px 18px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#ff4747; margin-bottom:14px;">Recession</div><p style="font-size:13px; line-height:1.55; color:#a1a1a1; margin:0;">Weak paths failing — faded rows, failed traces, low-alpha history.</p></div>
+      <div style="background:#1f1f1f; padding:20px 18px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#5ac8fa; margin-bottom:14px;">Resolution</div><p style="font-size:13px; line-height:1.55; color:#a1a1a1; margin:0;">One path becoming clearer — champion marker, selected threshold.</p></div>
+      <div style="background:#1f1f1f; padding:20px 18px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#f3c449; margin-bottom:14px;">Inheritance</div><p style="font-size:13px; line-height:1.55; color:#a1a1a1; margin:0;">Validated progress becoming baseline — gold trace carried forward.</p></div>
+      <div style="background:#1f1f1f; padding:20px 18px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#9bb2c8; margin-bottom:14px;">Memory</div><p style="font-size:13px; line-height:1.55; color:#a1a1a1; margin:0;">Prior eras remaining operationally relevant — strata, residue.</p></div>
+      <div style="background:#1f1f1f; padding:20px 18px;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e85aa0; margin-bottom:14px;">Reopening</div><p style="font-size:13px; line-height:1.55; color:#a1a1a1; margin:0;">New possibility from inherited state — challenger queue, empty slots.</p></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:30px;">
+      <div style="text-align:center;"><div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#7666f5; padding:14px 8px; border:1px solid #ffffff14; border-radius:8px; background:#1f1f1f;">Diverge</div></div>
+      <div style="text-align:center;"><div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#ff9b4e; padding:14px 8px; border:1px solid #ffffff14; border-radius:8px; background:#1f1f1f;">Align</div></div>
+      <div style="text-align:center;"><div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#5ac8fa; padding:14px 8px; border:1px solid #ffffff14; border-radius:8px; background:#1f1f1f;">Resolve</div></div>
+      <div style="text-align:center;"><div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#f3c449; padding:14px 8px; border:1px solid rgba(243,196,73,.4); border-radius:8px; background:rgba(243,196,73,.07);">Inherit</div></div>
+      <div style="text-align:center;"><div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#e85aa0; padding:14px 8px; border:1px solid #ffffff14; border-radius:8px; background:#1f1f1f;">Reopen</div></div>
+    </div>
+    <div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e5e5e540; text-align:center; margin-top:14px;">The operating cycle — every mode is a different rendering of this sequence</div>
+  </section>
+
+  <!-- ================= COLOR ================= -->
+  <section id="color" class="ds-section" style="max-width:1180px; margin:0 auto; padding:70px 40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #ffffff14; padding-bottom:18px; margin-bottom:18px;">
+      <div style="display:flex; align-items:baseline; gap:18px;"><span style="font-family:'Geist Mono',monospace; font-size:13px; color:#f3c449; letter-spacing:.1em;">02</span><h2 style="font-size:34px; font-weight:600; letter-spacing:-.02em; margin:0;">Color</h2></div>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#e5e5e573;">Click a chip to copy</span>
+    </div>
+    <p style="font-size:16px; line-height:1.6; color:#a1a1a1; max-width:46em; margin:0 0 34px;">Neutral structure carries trust. Spectral matter carries unresolved possibility. Gold carries inherited proof. Color is always state, never decoration.</p>
+
+    <!-- Neutrals -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:14px;">Carbon &amp; Bone — environment + readable layer</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; margin-bottom:34px;">
+      <div data-copy="#1c1c1c" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:74px; background:#1c1c1c; border-bottom:1px solid #ffffff14;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Carbon bg</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-bg · #1c1c1c</div></div></div>
+      <div data-copy="#181818" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:74px; background:#181818; border-bottom:1px solid #ffffff14;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Deep carbon</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-bg-deep · #181818</div></div></div>
+      <div data-copy="#1f1f1f" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:74px; background:#1f1f1f; border-bottom:1px solid #ffffff14;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Surface</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-surface · #1f1f1f</div></div></div>
+      <div data-copy="#e5e5e5" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:74px; background:#e5e5e5; border-bottom:1px solid #ffffff14;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Bone (fg)</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-fg · #e5e5e5</div></div></div>
+      <div data-copy="#a1a1a1" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:74px; background:#a1a1a1; border-bottom:1px solid #ffffff14;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Secondary</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-fg-2 · #a1a1a1</div></div></div>
+      <div data-copy="#e5e5e573" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:74px; background:#3a3a3a; border-bottom:1px solid #ffffff14; display:flex; align-items:center; justify-content:center;"><span style="color:#e5e5e573; font-family:'Geist Mono',monospace; font-size:11px;">45%</span></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Tertiary</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-fg-3 · #e5e5e573</div></div></div>
+      <div data-copy="#e5e5e540" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:74px; background:#2c2c2c; border-bottom:1px solid #ffffff14; display:flex; align-items:center; justify-content:center;"><span style="color:#e5e5e540; font-family:'Geist Mono',monospace; font-size:11px;">25%</span></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Quaternary</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-fg-4 · #e5e5e540</div></div></div>
+      <div data-copy="#ffffff0f" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:74px; background:#222; border-bottom:1px solid #ffffff1f; display:flex; align-items:center; justify-content:center;"><span style="color:#a1a1a1; font-family:'Geist Mono',monospace; font-size:11px;">hairline</span></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Border</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-border · #ffffff0f</div></div></div>
+    </div>
+
+    <!-- State / accent row -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:14px;">Semantic state — meaning, never mood</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin-bottom:18px;">
+      <div data-copy="#f3c449" style="cursor:pointer; border:1px solid rgba(243,196,73,.4); border-radius:10px; overflow:hidden; background:rgba(243,196,73,.07);"><div style="height:54px; background:#f3c449;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500; color:#f3c449;">Validated</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-gold · #f3c449</div></div></div>
+      <div data-copy="#5ac8fa" style="cursor:pointer; border:1px solid rgba(90,200,250,.45); border-radius:10px; overflow:hidden; background:rgba(90,200,250,.08);"><div style="height:54px; background:#5ac8fa;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500; color:#5ac8fa;">Focus / info</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-accent · #5ac8fa</div></div></div>
+      <div data-copy="#44ff9a" style="cursor:pointer; border:1px solid rgba(68,255,154,.25); border-radius:10px; overflow:hidden; background:rgba(68,255,154,.06);"><div style="height:54px; background:#44ff9a;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500; color:#44ff9a;">Passing</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-ok · #44ff9a</div></div></div>
+      <div data-copy="#ff9b4e" style="cursor:pointer; border:1px solid rgba(255,155,78,.35); border-radius:10px; overflow:hidden; background:rgba(255,155,78,.07);"><div style="height:54px; background:#ff9b4e;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500; color:#ff9b4e;">Evaluating</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-activity · #ff9b4e</div></div></div>
+      <div data-copy="#ff4747" style="cursor:pointer; border:1px solid rgba(255,71,71,.3); border-radius:10px; overflow:hidden; background:rgba(255,71,71,.07);"><div style="height:54px; background:#ff4747;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500; color:#ff4747;">Failing</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-bad · #ff4747</div></div></div>
+      <div data-copy="#f5e663" style="cursor:pointer; border:1px solid rgba(245,230,99,.28); border-radius:10px; overflow:hidden; background:rgba(245,230,99,.07);"><div style="height:54px; background:#f5e663;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500; color:#f5e663;">Warning</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--color-warn · #f5e663</div></div></div>
+    </div>
+    <div style="font-size:13px; line-height:1.6; color:#e5e5e573; margin-bottom:34px; font-style:italic;">Warning yellow is caution, never validation — keep it visually distinct from gold. Gold appears only after a path earns it.</div>
+
+    <!-- Frontier spectrum -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:14px;">Frontier spectrum — unresolved candidate matter only</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:14px;">
+      <div data-copy="#3d73e8" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:54px; background:#3d73e8;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Cobalt — depth</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--frontier-cobalt · #3d73e8</div></div></div>
+      <div data-copy="#7666f5" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:54px; background:#7666f5;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Violet — possibility</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--frontier-violet · #7666f5</div></div></div>
+      <div data-copy="#e85aa0" style="cursor:pointer; border:1px solid #ffffff14; border-radius:10px; overflow:hidden;"><div style="height:54px; background:#e85aa0;"></div><div style="padding:11px 12px;"><div style="font-size:13px; font-weight:500;">Magenta — interference</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:3px;">--frontier-magenta · #e85aa0</div></div></div>
+    </div>
+    <div style="font-size:13px; line-height:1.6; color:#e5e5e573; margin-bottom:34px; font-style:italic;">Violet is unresolved frontier material — not Affine's brand colour. Never use it for tables, navigation, buttons, metrics or page backgrounds.</div>
+
+    <!-- Ratios -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:14px;">Ratio — product instrument screens</div>
+    <div style="display:flex; height:44px; border-radius:8px; overflow:hidden; border:1px solid #ffffff14;">
+      <div style="flex:80; background:#1f1f1f; display:flex; align-items:center; justify-content:center; font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.1em; color:#a1a1a1;">CARBON 75–90%</div>
+      <div style="flex:14; background:#3a3a3a; display:flex; align-items:center; justify-content:center; font-family:'Geist Mono',monospace; font-size:10px; color:#e5e5e5;">BONE</div>
+      <div style="flex:5; background:#5ac8fa; display:flex; align-items:center; justify-content:center; font-family:'Geist Mono',monospace; font-size:9px; color:#06283a;">STATE</div>
+      <div style="flex:2; background:#f3c449;"></div>
+    </div>
+    <div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.1em; color:#e5e5e540; margin-top:9px;">75–90% carbon · 8–18% bone · 2–6% state · 0.5–2% gold</div>
+  </section>
+
+  <!-- ================= TYPOGRAPHY ================= -->
+  <section id="type" class="ds-section" style="max-width:1180px; margin:0 auto; padding:70px 40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #ffffff14; padding-bottom:18px; margin-bottom:40px;">
+      <div style="display:flex; align-items:baseline; gap:18px;"><span style="font-family:'Geist Mono',monospace; font-size:13px; color:#f3c449; letter-spacing:.1em;">03</span><h2 style="font-size:34px; font-weight:600; letter-spacing:-.02em; margin:0;">Typography</h2></div>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#e5e5e573;">Sans · Mono · Display</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:38px;">
+      <div style="border:1px solid #ffffff14; border-radius:10px; padding:22px; background:#1f1f1f;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e5e5e573; margin-bottom:14px;">Product sans</div><div style="font-family:'Geist',sans-serif; font-size:44px; font-weight:600; letter-spacing:-.02em; line-height:1; margin-bottom:8px;">Geist</div><div style="font-size:13px; color:#a1a1a1;">UI copy, buttons, nav, titles. Weights 300–700.</div></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; padding:22px; background:#1f1f1f;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e5e5e573; margin-bottom:14px;">Product mono</div><div style="font-family:'Geist Mono',monospace; font-size:44px; font-weight:500; line-height:1; margin-bottom:8px;">Mono</div><div style="font-size:13px; color:#a1a1a1;">Metrics, labels, hashes, benchmark evidence. The measurement layer.</div></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; padding:22px; background:#1f1f1f;"><div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e5e5e573; margin-bottom:14px;">Display</div><div style="font-family:'Instrument Serif',serif; font-size:48px; line-height:1; margin-bottom:8px;">Instrument</div><div style="font-size:13px; color:#a1a1a1;">Landing thesis, manifesto pulls, sparse headings only.</div></div>
+    </div>
+
+    <!-- Type scale table -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:14px;">Type scale</div>
+    <div style="border:1px solid #ffffff14; border-radius:10px; overflow:hidden;">
+      <div style="display:grid; grid-template-columns:1.6fr 90px 80px 90px; gap:16px; padding:11px 18px; background:#181818; border-bottom:1px solid #ffffff14; font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e573;"><span>Sample</span><span>Size</span><span>Weight</span><span>Role</span></div>
+      <div style="display:grid; grid-template-columns:1.6fr 90px 80px 90px; gap:16px; padding:14px 18px; align-items:center; border-bottom:1px solid #ffffff0a;"><span style="font-family:'Instrument Serif',serif; font-size:48px; line-height:1;">Mine open reasoning</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">36–64</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">400</span><span style="font-family:'Geist Mono',monospace; font-size:11px; color:#e5e5e573;">Brand</span></div>
+      <div style="display:grid; grid-template-columns:1.6fr 90px 80px 90px; gap:16px; padding:14px 18px; align-items:center; border-bottom:1px solid #ffffff0a;"><span style="font-size:24px; font-weight:600; letter-spacing:-.02em;">Current champion</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">20–26</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">500–600</span><span style="font-family:'Geist Mono',monospace; font-size:11px; color:#e5e5e573;">Product title</span></div>
+      <div style="display:grid; grid-template-columns:1.6fr 90px 80px 90px; gap:16px; padding:14px 18px; align-items:center; border-bottom:1px solid #ffffff0a;"><span style="font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:.08em;">Section title</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">12–14</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">500–600</span><span style="font-family:'Geist Mono',monospace; font-size:11px; color:#e5e5e573;">Section</span></div>
+      <div style="display:grid; grid-template-columns:1.6fr 90px 80px 90px; gap:16px; padding:14px 18px; align-items:center; border-bottom:1px solid #ffffff0a;"><span style="font-size:15px;">Affine aligns distributed capabilities so useful intelligence can compound.</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">14–16</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">400</span><span style="font-family:'Geist Mono',monospace; font-size:11px; color:#e5e5e573;">Body</span></div>
+      <div style="display:grid; grid-template-columns:1.6fr 90px 80px 90px; gap:16px; padding:14px 18px; align-items:center; border-bottom:1px solid #ffffff0a;"><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#e5e5e5;">affine/glaive-rl-32b · 70.5</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">11–12</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">400–500</span><span style="font-family:'Geist Mono',monospace; font-size:11px; color:#e5e5e573;">Table value</span></div>
+      <div style="display:grid; grid-template-columns:1.6fr 90px 80px 90px; gap:16px; padding:14px 18px; align-items:center;"><span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#a1a1a1;">Inherited frontier</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">9–10</span><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">500</span><span style="font-family:'Geist Mono',monospace; font-size:11px; color:#e5e5e573;">Micro label</span></div>
+    </div>
+
+    <!-- Mine open construction -->
+    <div style="margin-top:34px; border:1px solid #ffffff14; border-radius:10px; padding:30px; background:radial-gradient(circle at 80% 20%, rgba(243,196,73,.05), transparent 50%), #1f1f1f;">
+      <div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e5e5e573; margin-bottom:18px;">Display voice · "Mine open [capability]"</div>
+      <div style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,58px); line-height:1.05;">Mine open <span style="background:linear-gradient(90deg,#5ac8fa,#44ff9a,#f3c449,#ff9b4e,#e85aa0); -webkit-background-clip:text; background-clip:text; color:transparent; font-style:italic;">reasoning</span></div>
+      <div style="font-size:13px; color:#a1a1a1; margin-top:16px; line-height:1.6;">Approved capability words: reasoning · intelligence · deduction · abduction · cognition. The capability word may carry a controlled spectrum treatment and may be italic; everything must resolve to readable language. Never apply the spectrum to product data.</div>
+    </div>
+  </section>
+
+  <!-- ================= SPACING & SURFACES ================= -->
+  <section id="space" class="ds-section" style="max-width:1180px; margin:0 auto; padding:70px 40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #ffffff14; padding-bottom:18px; margin-bottom:40px;">
+      <div style="display:flex; align-items:baseline; gap:18px;"><span style="font-family:'Geist Mono',monospace; font-size:13px; color:#f3c449; letter-spacing:.1em;">04</span><h2 style="font-size:34px; font-weight:600; letter-spacing:-.02em; margin:0;">Spacing &amp; surfaces</h2></div>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#e5e5e573;">Hairline-first</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px;">
+      <!-- spacing scale -->
+      <div>
+        <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:16px;">4px scale</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:4px; height:18px; background:#f3c449; border-radius:2px;"></div><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">4 · --space-4</span></div>
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:8px; height:18px; background:#f3c449; border-radius:2px;"></div><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">8 · --space-8</span></div>
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:12px; height:18px; background:#f3c449; border-radius:2px;"></div><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">12 · --space-12</span></div>
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:16px; height:18px; background:#f3c449; border-radius:2px;"></div><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">16 · --space-16</span></div>
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:20px; height:18px; background:#f3c449; border-radius:2px;"></div><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">20 · --space-20</span></div>
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:24px; height:18px; background:#f3c449; border-radius:2px;"></div><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">24 · --space-24</span></div>
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:32px; height:18px; background:#f3c449; border-radius:2px;"></div><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">32 · --space-32</span></div>
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:40px; height:18px; background:#f3c449; border-radius:2px;"></div><span style="font-family:'Geist Mono',monospace; font-size:12px; color:#a1a1a1;">40 · --space-40</span></div>
+        </div>
+      </div>
+      <!-- radius -->
+      <div>
+        <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:16px;">Radius — pushed small &amp; technical</div>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <div style="text-align:center;"><div style="width:78px; height:60px; background:#2a2a2a; border:1px solid #ffffff1f; border-radius:4px; margin-bottom:8px;"></div><div style="font-family:'Geist Mono',monospace; font-size:11px; color:#a1a1a1;">sm · 4</div></div>
+          <div style="text-align:center;"><div style="width:78px; height:60px; background:#2a2a2a; border:1px solid #ffffff1f; border-radius:6px; margin-bottom:8px;"></div><div style="font-family:'Geist Mono',monospace; font-size:11px; color:#a1a1a1;">md · 6</div></div>
+          <div style="text-align:center;"><div style="width:78px; height:60px; background:#2a2a2a; border:1px solid #ffffff1f; border-radius:8px; margin-bottom:8px;"></div><div style="font-family:'Geist Mono',monospace; font-size:11px; color:#a1a1a1;">panel · 8</div></div>
+        </div>
+        <div style="font-size:13px; line-height:1.6; color:#e5e5e573; margin-top:18px; font-style:italic;">Avoid inflated soft cards. Do not nest cards inside cards. Group with spacing, not extra borders.</div>
+      </div>
+    </div>
+
+    <!-- surfaces & elevation -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin:38px 0 16px;">Surface hierarchy &amp; elevation</div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
+      <div style="background:#181818; border:1px solid #ffffff14; border-radius:8px; padding:20px 18px;"><div style="font-size:13px; font-weight:500; margin-bottom:6px;">Recessed</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">bg-deep · chart beds, history</div></div>
+      <div style="background:#1c1c1c; border:1px solid #ffffff14; border-radius:8px; padding:20px 18px;"><div style="font-size:13px; font-weight:500; margin-bottom:6px;">App</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">bg · the environment</div></div>
+      <div style="background:#1f1f1f; border:1px solid #ffffff14; border-radius:8px; padding:20px 18px;"><div style="font-size:13px; font-weight:500; margin-bottom:6px;">Panel</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">surface + hairline</div></div>
+      <div style="background:#1f1f1f; border:1px solid #ffffff1f; border-radius:8px; padding:20px 18px; box-shadow:0 18px 54px rgba(0,0,0,.4);"><div style="font-size:13px; font-weight:500; margin-bottom:6px;">Elevated</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">0 18 54 rgba(0,0,0,.16)</div></div>
+    </div>
+  </section>
+
+  <!-- ================= COMPONENTS ================= -->
+  <section id="components" class="ds-section" style="max-width:1180px; margin:0 auto; padding:70px 40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #ffffff14; padding-bottom:18px; margin-bottom:14px;">
+      <div style="display:flex; align-items:baseline; gap:18px;"><span style="font-family:'Geist Mono',monospace; font-size:13px; color:#f3c449; letter-spacing:.1em;">05</span><h2 style="font-size:34px; font-weight:600; letter-spacing:-.02em; margin:0;">Components</h2></div>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#e5e5e573;">Frontier translations</span>
+    </div>
+    <p style="font-size:16px; line-height:1.6; color:#a1a1a1; max-width:46em; margin:0 0 34px;">Components are not generic UI objects. Each represents a part of the mechanism — candidate, pressure, comparison, resolution, inheritance or reopening — before it gets a treatment.</p>
+
+    <!-- BUTTONS -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:16px;">Buttons — gold only enters or advances the mechanism</div>
+    <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:26px; margin-bottom:18px;">
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px 16px; align-items:center; text-align:center;">
+        <div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e540;">Default</div>
+        <div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e540;">Hover</div>
+        <div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e540;">Focus</div>
+        <div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e540;">Disabled</div>
+        <!-- primary -->
+        <div><button style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#1a1500; background:linear-gradient(180deg,#ffd55e,#f3c449); border:1px solid rgba(243,196,73,.55); padding:10px 16px; border-radius:7px; cursor:pointer;">Start mining</button></div>
+        <div><button style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#1a1500; background:linear-gradient(180deg,#ffdc71,#f3c449); border:1px solid rgba(243,196,73,.7); padding:10px 16px; border-radius:7px; cursor:pointer; filter:brightness(1.05); box-shadow:0 10px 26px rgba(243,196,73,.16);">Start mining</button></div>
+        <div><button style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#1a1500; background:linear-gradient(180deg,#ffd55e,#f3c449); border:1px solid rgba(243,196,73,.55); padding:10px 16px; border-radius:7px; cursor:pointer; outline:2px solid #5ac8fa; outline-offset:2px;">Start mining</button></div>
+        <div><button disabled style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#1a150088; background:#6b5e23; border:1px solid #ffffff14; padding:10px 16px; border-radius:7px; opacity:.5;">Start mining</button></div>
+        <!-- secondary -->
+        <div><button style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e5; background:rgba(229,229,229,.04); border:1px solid #ffffff1a; padding:10px 16px; border-radius:7px; cursor:pointer;">Inspect</button></div>
+        <div><button style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e5; background:rgba(229,229,229,.08); border:1px solid #ffffff2e; padding:10px 16px; border-radius:7px; cursor:pointer;">Inspect</button></div>
+        <div><button style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e5; background:rgba(229,229,229,.04); border:1px solid #ffffff1a; padding:10px 16px; border-radius:7px; cursor:pointer; outline:2px solid #5ac8fa; outline-offset:2px;">Inspect</button></div>
+        <div><button disabled style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e540; background:rgba(229,229,229,.02); border:1px solid #ffffff0f; padding:10px 16px; border-radius:7px; opacity:.6;">Inspect</button></div>
+        <!-- ghost -->
+        <div><button style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#a1a1a1; background:none; border:none; padding:10px 16px; border-radius:7px; cursor:pointer;">Docs</button></div>
+        <div><button style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e5; background:rgba(229,229,229,.05); border:none; padding:10px 16px; border-radius:7px; cursor:pointer;">Docs</button></div>
+        <div><button style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#a1a1a1; background:none; border:none; padding:10px 16px; border-radius:7px; cursor:pointer; outline:2px solid #5ac8fa; outline-offset:2px;">Docs</button></div>
+        <div><button disabled style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e540; background:none; border:none; padding:10px 16px; border-radius:7px; opacity:.6;">Docs</button></div>
+      </div>
+    </div>
+    <div style="display:flex; gap:18px; font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.1em; color:#e5e5e573; margin-bottom:40px;"><span style="color:#a1a1a1;">Row 1 Primary</span><span>·</span><span style="color:#a1a1a1;">Row 2 Secondary</span><span>·</span><span style="color:#a1a1a1;">Row 3 Ghost</span><span>·</span><span>Only one primary per context</span></div>
+
+    <!-- CHIPS / BADGES -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:16px;">Status chips — colour + label, never colour alone</div>
+    <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:24px; margin-bottom:40px; display:flex; flex-wrap:wrap; gap:12px;">
+      <span style="display:inline-flex; align-items:center; gap:7px; font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.06em; color:#a1a1a1; background:transparent; border:1px solid #ffffff1a; padding:6px 11px; border-radius:6px;"><span style="width:6px; height:6px; border-radius:50%; background:#a1a1a1;"></span>Neutral</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.06em; color:#5ac8fa; background:rgba(90,200,250,.08); border:1px solid rgba(90,200,250,.45); padding:6px 11px; border-radius:6px;"><span style="width:6px; height:6px; border-radius:50%; background:#5ac8fa;"></span>Focus</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.06em; color:#ff9b4e; background:rgba(255,155,78,.07); border:1px solid rgba(255,155,78,.35); padding:6px 11px; border-radius:6px;"><span style="width:6px; height:6px; border-radius:50%; background:#ff9b4e;"></span>Evaluating</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.06em; color:#44ff9a; background:rgba(68,255,154,.06); border:1px solid rgba(68,255,154,.25); padding:6px 11px; border-radius:6px;"><span style="width:6px; height:6px; border-radius:50%; background:#44ff9a;"></span>Passing</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.06em; color:#ff4747; background:rgba(255,71,71,.07); border:1px solid rgba(255,71,71,.3); padding:6px 11px; border-radius:6px;"><span style="width:6px; height:6px; border-radius:50%; background:#ff4747;"></span>Failing</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.06em; color:#f5e663; background:rgba(245,230,99,.07); border:1px solid rgba(245,230,99,.28); padding:6px 11px; border-radius:6px;"><span style="width:6px; height:6px; border-radius:50%; background:#f5e663;"></span>Warning</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.06em; color:#f3c449; background:rgba(243,196,73,.07); border:1px solid rgba(243,196,73,.4); padding:6px 11px; border-radius:6px;"><span style="width:6px; height:6px; border-radius:50%; background:#f3c449;"></span>Validated</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.06em; color:#e5e5e573; background:transparent; border:1px solid #ffffff0a; padding:6px 11px; border-radius:6px;"><span style="width:6px; height:6px; border-radius:50%; background:#e5e5e573;"></span>Muted</span>
+    </div>
+
+    <!-- METRIC STRIP -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:16px;">Metric strip — evidence, tabular</div>
+    <div style="border:1px solid #ffffff14; border-radius:10px; background:linear-gradient(180deg,rgba(24,24,24,.6),rgba(31,31,31,.8)); padding:16px 22px; margin-bottom:40px; display:flex; flex-wrap:wrap; align-items:center; gap:14px 26px;">
+      <span style="display:inline-flex; align-items:center; gap:9px; font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#a1a1a1;"><span style="width:6px; height:6px; border-radius:50%; background:#f3c449; box-shadow:0 0 12px rgba(243,196,73,.4);"></span>Inherited frontier</span>
+      <span style="font-family:'Geist Mono',monospace; font-size:12px; color:#f3c449; letter-spacing:.05em;">affine/glaive-rl-32b <span style="color:#e5e5e540;">#a1f4c9</span></span>
+      <span style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#a1a1a1;">Era <span style="color:#e5e5e5;">1294</span></span>
+      <span style="display:inline-flex; gap:14px; font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.05em; color:#a1a1a1; font-variant-numeric:tabular-nums;"><span>DIST <strong style="color:#e5e5e5; font-weight:400;">8.4</strong></span><span>MEM <strong style="color:#e5e5e5; font-weight:400;">68.1</strong></span><span>SWE <strong style="color:#44ff9a; font-weight:400;">55.8</strong></span><span>TERM <strong style="color:#e5e5e5; font-weight:400;">70.5</strong></span></span>
+    </div>
+
+    <!-- TABLE -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:16px;">Table — every row is a state in the mechanism</div>
+    <div style="border:1px solid #ffffff14; border-radius:10px; overflow:hidden; margin-bottom:18px; font-variant-numeric:tabular-nums;">
+      <div style="display:grid; grid-template-columns:80px 48px 1.5fr 70px 70px 70px 90px; gap:14px; padding:11px 18px; background:#181818; border-bottom:1px solid #ffffff14; font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#e5e5e573;"><span>Era</span><span>Uid</span><span>Model</span><span style="text-align:right;">SWE</span><span style="text-align:right;">Term</span><span style="text-align:right;">Δ</span><span>State</span></div>
+      <div style="display:grid; grid-template-columns:80px 48px 1.5fr 70px 70px 70px 90px; gap:14px; padding:13px 18px; align-items:center; background:rgba(243,196,73,.07); border-bottom:1px solid #ffffff0a; font-family:'Geist Mono',monospace; font-size:12px;"><span style="color:#f3c449;">1294</span><span style="color:#a1a1a1;">07</span><span style="color:#e5e5e5;">glaive-rl-32b</span><span style="text-align:right; color:#e5e5e5;">55.8</span><span style="text-align:right; color:#e5e5e5;">70.5</span><span style="text-align:right; color:#44ff9a;">+2.1</span><span style="color:#f3c449;">Champion</span></div>
+      <div style="display:grid; grid-template-columns:80px 48px 1.5fr 70px 70px 70px 90px; gap:14px; padding:13px 18px; align-items:center; border-bottom:1px solid #ffffff0a; font-family:'Geist Mono',monospace; font-size:12px;"><span style="color:#5ac8fa;">1295</span><span style="color:#a1a1a1;">12</span><span style="color:#e5e5e5;">qwen-distil-14b</span><span style="text-align:right; color:#e5e5e5;">54.2</span><span style="text-align:right; color:#e5e5e5;">69.0</span><span style="text-align:right; color:#ff9b4e;">eval</span><span style="color:#5ac8fa;">Challenger</span></div>
+      <div style="display:grid; grid-template-columns:80px 48px 1.5fr 70px 70px 70px 90px; gap:14px; padding:13px 18px; align-items:center; border-bottom:1px solid #ffffff0a; font-family:'Geist Mono',monospace; font-size:12px; opacity:.5;"><span style="color:#a1a1a1;">1290</span><span style="color:#a1a1a1;">04</span><span style="color:#a1a1a1;">mistral-rh-7b</span><span style="text-align:right; color:#a1a1a1;">41.0</span><span style="text-align:right; color:#a1a1a1;">52.3</span><span style="text-align:right; color:#ff4747;">-1.4</span><span style="color:#ff4747;">Receded</span></div>
+      <div style="display:grid; grid-template-columns:80px 48px 1.5fr 70px 70px 70px 90px; gap:14px; padding:13px 18px; align-items:center; font-family:'Geist Mono',monospace; font-size:12px; opacity:.35;"><span style="color:#a1a1a1;">1288</span><span style="color:#a1a1a1;">—</span><span style="color:#a1a1a1;">previous champion</span><span style="text-align:right; color:#a1a1a1;">39.5</span><span style="text-align:right; color:#a1a1a1;">50.1</span><span style="text-align:right; color:#a1a1a1;">—</span><span style="color:#a1a1a1;">Memory</span></div>
+    </div>
+    <div style="display:flex; gap:18px; flex-wrap:wrap; font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.08em; color:#e5e5e573; margin-bottom:40px;"><span style="color:#f3c449;">● Champion (gold tint ≤8%)</span><span style="color:#5ac8fa;">● Challenger</span><span style="color:#ff4747;">● Receded (low-alpha)</span><span style="color:#a1a1a1;">● Memory (faded, still readable)</span></div>
+
+    <!-- CHART / FRONTIER GRAMMAR -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:16px;">Chart &amp; frontier-line grammar</div>
+    <div style="display:grid; grid-template-columns:1.4fr 1fr; gap:18px; margin-bottom:40px;">
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#181818; padding:20px; position:relative; overflow:hidden;">
+        <div style="position:absolute; left:20px; right:20px; top:34%; height:1px; background:linear-gradient(90deg,transparent,#f3c449,#f3c449,transparent); box-shadow:0 0 12px rgba(243,196,73,.4);"></div>
+        <div style="position:absolute; left:20px; right:42%; top:58%; height:1px; background:linear-gradient(90deg,transparent,#7666f5);"></div>
+        <div style="position:absolute; left:20px; right:30%; top:70%; height:1px; background:linear-gradient(90deg,transparent,#e85aa0); opacity:.6;"></div>
+        <div style="position:absolute; left:20px; right:64%; top:82%; height:1px; background:#ff4747; opacity:.3;"></div>
+        <div style="position:relative; height:150px; display:flex; align-items:flex-start; justify-content:space-between;"><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#f3c449; letter-spacing:.1em;">FRONTIER</span><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#e5e5e540;">candidate traces under pressure</span></div>
+      </div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:22px; font-size:13px; line-height:1.7; color:#a1a1a1;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:9px;"><span style="width:18px; height:2px; background:#f3c449; border-radius:2px;"></span><span style="color:#e5e5e5;">Gold</span> inherited frontier / champion</div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:9px;"><span style="width:18px; height:2px; background:#7666f5; border-radius:2px;"></span>Spectrum unresolved candidate</div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:9px;"><span style="width:18px; height:2px; background:#ff4747; border-radius:2px; opacity:.4;"></span>Red / faded receded path</div>
+        <div style="display:flex; align-items:center; gap:10px;"><span style="width:18px; height:2px; background:#9bb2c8; border-radius:2px; opacity:.5;"></span>Grey historical baseline</div>
+        <div style="font-size:12px; font-style:italic; color:#e5e5e573; margin-top:14px; line-height:1.55;">Never render the frontier as a glow, halo or trophy. It is a line, a dot, a selected row or a threshold.</div>
+      </div>
+    </div>
+
+    <!-- EMPTY / REOPENING -->
+    <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#e5e5e573; margin-bottom:16px;">Empty state — reopening, not blankness</div>
+    <div style="border:1px dashed #ffffff1a; border-radius:10px; background:#181818; padding:34px; text-align:center;">
+      <div style="font-family:'Geist Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#7666f5; margin-bottom:10px;">Challenger queue · open</div>
+      <div style="font-size:15px; color:#e5e5e5; margin-bottom:6px;">No challenger has entered era 1295 yet.</div>
+      <div style="font-size:13px; color:#a1a1a1;">The frontier holds at 55.8 SWE. Submit a model revision to reopen the contest.</div>
+    </div>
+  </section>
+
+  <!-- ================= ICONOGRAPHY ================= -->
+  <section id="icons" class="ds-section" style="max-width:1180px; margin:0 auto; padding:70px 40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #ffffff14; padding-bottom:18px; margin-bottom:40px;">
+      <div style="display:flex; align-items:baseline; gap:18px;"><span style="font-family:'Geist Mono',monospace; font-size:13px; color:#f3c449; letter-spacing:.1em;">06</span><h2 style="font-size:34px; font-weight:600; letter-spacing:-.02em; margin:0;">Iconography</h2></div>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#e5e5e573;">Outlined · 2px · no fills</span>
+    </div>
+    <p style="font-size:16px; line-height:1.6; color:#a1a1a1; max-width:46em; margin:0 0 30px;">Functional affordances only — outlined, 1.75–2px stroke, no fills except status dots. No emoji in product UI. Meaningful Unicode (↑ ↓ ·) is allowed where it carries information.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(112px,1fr)); gap:10px;">
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:18px; display:flex; flex-direction:column; align-items:center; gap:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">add</span></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:18px; display:flex; flex-direction:column; align-items:center; gap:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">dismiss</span></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:18px; display:flex; flex-direction:column; align-items:center; gap:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#44ff9a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">pass</span></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:18px; display:flex; flex-direction:column; align-items:center; gap:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5ac8fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">improve</span></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:18px; display:flex; flex-direction:column; align-items:center; gap:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4747" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7 17 17M16 17H7V8"/></svg><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">regress</span></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:18px; display:flex; flex-direction:column; align-items:center; gap:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">search</span></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:18px; display:flex; flex-direction:column; align-items:center; gap:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">filter</span></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:18px; display:flex; flex-direction:column; align-items:center; gap:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f3c449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">inherit</span></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:18px; display:flex; flex-direction:column; align-items:center; gap:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h13M11 7l5 5-5 5M21 5v14"/></svg><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">advance</span></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; background:#1f1f1f; padding:18px; display:flex; flex-direction:column; align-items:center; gap:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1;">era</span></div>
+    </div>
+  </section>
+
+  <!-- ================= MOTION ================= -->
+  <section class="ds-section" style="max-width:1180px; margin:0 auto; padding:70px 40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #ffffff14; padding-bottom:18px; margin-bottom:40px;">
+      <div style="display:flex; align-items:baseline; gap:18px;"><span style="font-family:'Geist Mono',monospace; font-size:13px; color:#f3c449; letter-spacing:.1em;">07</span><h2 style="font-size:34px; font-weight:600; letter-spacing:-.02em; margin:0;">Motion grammar</h2></div>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#e5e5e573;">Consequence, not ambience</span>
+    </div>
+    <p style="font-size:16px; line-height:1.6; color:#a1a1a1; max-width:46em; margin:0 0 30px;">Motion reveals cause, consequence and accumulated change. Mechanical qualities (stable intervals, thresholds, channels) over living qualities (local variation, reinforcement, weak paths fading). Never a full-viewport gold flash on load.</p>
+    <div style="border:1px solid #ffffff14; border-radius:10px; background:#181818; padding:26px; display:flex; flex-direction:column; gap:11px;">
+      <div style="display:flex; align-items:center; gap:14px;"><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#e5e5e573; width:70px;">candidate</span><div style="flex:1; height:2px; background:#7666f5; border-radius:2px; transform-origin:left; animation:ds-lane 3.2s ease-in-out infinite;"></div></div>
+      <div style="display:flex; align-items:center; gap:14px;"><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#e5e5e573; width:70px;">candidate</span><div style="flex:1; height:2px; background:#e85aa0; border-radius:2px; transform-origin:left; animation:ds-lane 3.2s ease-in-out infinite .5s;"></div></div>
+      <div style="display:flex; align-items:center; gap:14px;"><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#f3c449; width:70px;">inherited</span><div style="flex:1; height:2px; background:linear-gradient(90deg,#f3c449,#f3c449); border-radius:2px; box-shadow:0 0 10px rgba(243,196,73,.4); transform-origin:left; animation:ds-lane 3.2s ease-in-out infinite 1s;"></div></div>
+      <div style="display:flex; align-items:center; gap:14px;"><span style="font-family:'Geist Mono',monospace; font-size:10px; color:#e5e5e540; width:70px;">receded</span><div style="flex:1; height:2px; background:#ff4747; opacity:.4; border-radius:2px; transform-origin:left; animation:ds-lane 3.2s ease-in-out infinite 1.4s;"></div></div>
+      <div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.1em; color:#e5e5e540; margin-top:8px;">durations 0.12–0.22s · ease · reduced-motion shows resolved state immediately</div>
+    </div>
+  </section>
+
+  <!-- ================= VOICE ================= -->
+  <section id="voice" class="ds-section" style="max-width:1180px; margin:0 auto; padding:70px 40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #ffffff14; padding-bottom:18px; margin-bottom:40px;">
+      <div style="display:flex; align-items:baseline; gap:18px;"><span style="font-family:'Geist Mono',monospace; font-size:13px; color:#f3c449; letter-spacing:.1em;">08</span><h2 style="font-size:34px; font-weight:600; letter-spacing:-.02em; margin:0;">Voice &amp; copy</h2></div>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#e5e5e573;">Calm authority · causal</span>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div style="border:1px solid rgba(68,255,154,.2); border-radius:10px; background:rgba(68,255,154,.04); padding:24px;">
+        <div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#44ff9a; margin-bottom:16px;">Prefer</div>
+        <div style="font-size:15px; line-height:1.55; color:#e5e5e5; margin-bottom:14px;">Affine makes intelligence compound.</div>
+        <div style="font-size:15px; line-height:1.55; color:#e5e5e5; margin-bottom:14px;">What proves useful becomes the foundation for what comes next.</div>
+        <div style="font-size:15px; line-height:1.55; color:#e5e5e5; margin-bottom:14px;">Competition creates possibility. Alignment converts possibility into progress.</div>
+        <div style="font-size:15px; line-height:1.55; color:#e5e5e5;">Gold is the state that survived evaluation.</div>
+      </div>
+      <div style="border:1px solid rgba(255,71,71,.2); border-radius:10px; background:rgba(255,71,71,.04); padding:24px;">
+        <div style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#ff4747; margin-bottom:16px;">Avoid</div>
+        <div style="font-size:15px; line-height:1.55; color:#a1a1a1; margin-bottom:14px; text-decoration:line-through; text-decoration-color:#ff474766;">Discover the future of decentralised AI.</div>
+        <div style="font-size:15px; line-height:1.55; color:#a1a1a1; margin-bottom:14px; text-decoration:line-through; text-decoration-color:#ff474766;">Unlock the power of intelligent collaboration.</div>
+        <div style="font-size:15px; line-height:1.55; color:#a1a1a1; margin-bottom:14px; text-decoration:line-through; text-decoration-color:#ff474766;">A revolutionary ecosystem for machine learning.</div>
+        <div style="font-size:13px; line-height:1.6; color:#e5e5e573; font-style:italic; margin-top:6px;">No mystical vagueness, startup superlatives, claims of consciousness or finality.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= APPLICATIONS ================= -->
+  <section class="ds-section" style="max-width:1180px; margin:0 auto; padding:70px 40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid #ffffff14; padding-bottom:18px; margin-bottom:40px;">
+      <div style="display:flex; align-items:baseline; gap:18px;"><span style="font-family:'Geist Mono',monospace; font-size:13px; color:#f3c449; letter-spacing:.1em;">09</span><h2 style="font-size:34px; font-weight:600; letter-spacing:-.02em; margin:0;">Applications</h2></div>
+      <span style="font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#e5e5e573;">Mark as seal, never hero</span>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+      <div style="border:1px solid #ffffff14; border-radius:10px; overflow:hidden; background:#1f1f1f;"><div style="height:150px; display:flex; align-items:center; justify-content:center; background:#181818;"><img src="assets/affine-small-mark.svg" alt="" style="width:54px; height:54px; filter:drop-shadow(0 0 14px rgba(243,196,73,.22));"></div><div style="padding:14px 16px;"><div style="font-size:13px; font-weight:500;">Favicon / avatar</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:4px;">mark only · 16–24px in nav</div></div></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; overflow:hidden; background:#1f1f1f;"><div style="height:150px; display:flex; align-items:center; justify-content:center; gap:11px; background:#181818;"><img src="assets/affine-small-mark.svg" alt="" style="width:30px; height:30px;"><span style="font-weight:700; font-size:26px; letter-spacing:-.01em;">Affine</span></div><div style="padding:14px 16px;"><div style="font-size:13px; font-weight:500;">Lockup</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:4px;">mark + wordmark · stable anchor</div></div></div>
+      <div style="border:1px solid #ffffff14; border-radius:10px; overflow:hidden; background:#1f1f1f;"><div style="height:150px; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 40%, rgba(243,196,73,.12), transparent 60%), #0a0a0a;"><img src="assets/affine-mark-clean.png" alt="" style="width:96px; height:96px; object-fit:contain;"></div><div style="padding:14px 16px;"><div style="font-size:13px; font-weight:500;">Document cover</div><div style="font-family:'Geist Mono',monospace; font-size:10px; color:#a1a1a1; margin-top:4px;">larger, but never replaces the field</div></div></div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer style="border-top:1px solid #ffffff12; background:#181818; padding:34px 40px;">
+    <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center; font-family:'Geist Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#e5e5e573;">
+      <div style="display:flex; align-items:center; gap:10px;"><img src="assets/affine-small-mark.svg" alt="" style="width:18px; height:18px;"><span>Affine Design System · v1.0</span></div>
+      <span>Carbon is the world · gold is inherited proof</span>
+      <span>The mechanism persists. The frontier moves.</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900},&quot;embedded&quot;:{&quot;editor&quot;:null,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rootRef = React.createRef();
+  }
+  componentDidMount(){
+    if(this.props.embedded && this.rootRef.current){
+      const bar = this.rootRef.current.querySelector('.ds-topbar');
+      if(bar) bar.remove();
+      const ft = this.rootRef.current.querySelector('footer');
+      if(ft) ft.remove();
+    }
+    this._toast = document.createElement('div');
+    Object.assign(this._toast.style, {
+      position:'fixed', bottom:'28px', left:'50%', transform:'translateX(-50%) translateY(20px)',
+      background:'#1f1f1f', border:'1px solid #ffffff26', color:'#e5e5e5',
+      fontFamily:"'Geist Mono', monospace", fontSize:'12px', letterSpacing:'.06em',
+      padding:'11px 17px', borderRadius:'9px', boxShadow:'0 14px 44px rgba(0,0,0,.5)',
+      opacity:'0', pointerEvents:'none', transition:'opacity .18s ease, transform .18s ease', zIndex:'999'
+    });
+    document.body.appendChild(this._toast);
+    this._onClick = (e) => {
+      const t = e.target.closest('[data-copy]');
+      if(!t) return;
+      const v = t.getAttribute('data-copy');
+      try { navigator.clipboard && navigator.clipboard.writeText(v); } catch(_){}
+      this.flash('Copied  ' + v);
+    };
+    document.addEventListener('click', this._onClick);
+    this._positionSubnav = () => {
+      const root = this.rootRef.current; if(!root) return;
+      const sub = root.querySelector('[data-ds-subnav]'); if(!sub) return;
+      let off = 0;
+      if(this.props.embedded){ const h = document.querySelector('.af-site-header'); off = h ? h.getBoundingClientRect().height : 0; }
+      else { const tb = root.querySelector('.ds-topbar'); off = tb ? tb.getBoundingClientRect().height : 0; }
+      sub.style.top = Math.round(off) + 'px';
+    };
+    this._positionSubnav();
+    setTimeout(this._positionSubnav, 80);
+    window.addEventListener('resize', this._positionSubnav);
+  }
+  flash(msg){
+    const el = this._toast; if(!el) return;
+    el.textContent = msg;
+    el.style.opacity = '1';
+    el.style.transform = 'translateX(-50%) translateY(0)';
+    clearTimeout(this._tt);
+    this._tt = setTimeout(() => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateX(-50%) translateY(20px)';
+    }, 1400);
+  }
+  componentWillUnmount(){
+    document.removeEventListener('click', this._onClick);
+    if(this._positionSubnav) window.removeEventListener('resize', this._positionSubnav);
+    if(this._toast) this._toast.remove();
+  }
+  renderVals(){
+    return { rootRef: this.rootRef, doPrint: () => window.print() };
+  }
+}
+</script>
+</body>
+</html>
