@@ -1214,11 +1214,14 @@ class Component extends DCLogic {
     this.hlPlainRef = React.createRef();
     this.hlGradRef = React.createRef();
     this._mx = 0; this._my = 0; this._tmx = 0; this._tmy = 0;
-    this.state = { page:'home', activeEnv:'ALL', openMiner:23 };
-    this._page = 'home';
+    const page = this.pageFromLocation();
+    this.state = { page, activeEnv:'ALL', openMiner:23 };
+    this._page = page;
   }
 
   componentDidMount(){
+    this._onPopState = () => this.setState({ page:this.pageFromLocation() });
+    window.addEventListener('popstate', this._onPopState);
     this.applyTweaks();
     this.initReveal();
     this.syncHome();
@@ -1237,6 +1240,7 @@ class Component extends DCLogic {
   }
 
   componentWillUnmount(){
+    if(this._onPopState) window.removeEventListener('popstate', this._onPopState);
     this.stopPortal();
     this.stopFrontierField();
     this.stopMechanismField();
@@ -1972,7 +1976,40 @@ class Component extends DCLogic {
     });
   }
 
-  go(p){ return ()=> this.setState({ page:p }); }
+  routeBase(){
+    const routeSlugs = ['chat','design-system','rationale','manifesto','mechanism','network','mine'];
+    let path = window.location.pathname || '/';
+    path = path.replace(/\/index\.html$/,'/');
+    const clean = path.replace(/\/+$/,'');
+    const last = (clean.split('/').pop() || '').toLowerCase();
+    if(routeSlugs.includes(last)) return clean.slice(0, clean.length - last.length) || '/';
+    return path.endsWith('/') ? path : path.replace(/[^/]*$/,'');
+  }
+
+  pageSlug(p){
+    return ({ chat:'chat', designsystem:'design-system', rationale:'rationale', manifesto:'manifesto', mechanism:'mechanism', network:'network', mine:'mine' })[p] || '';
+  }
+
+  pageFromLocation(){
+    const bySlug = { chat:'chat', 'design-system':'designsystem', rationale:'rationale', manifesto:'manifesto', mechanism:'mechanism', network:'network', mine:'mine' };
+    let raw = '';
+    try{ raw = new URLSearchParams(window.location.search).get('page') || ''; }catch(_){}
+    if(!raw){
+      const path = (window.location.pathname || '').replace(/\/index\.html$/,'/').replace(/\/+$/,'');
+      raw = (path.split('/').pop() || '').toLowerCase();
+    }
+    return bySlug[raw] || bySlug[raw.replace(/\s+/g,'-')] || 'home';
+  }
+
+  writeRoute(p){
+    if(!window.history || !window.history.pushState) return;
+    const slug = this.pageSlug(p);
+    const base = this.routeBase();
+    const next = base + (slug ? slug + '/' : '');
+    if(window.location.pathname !== next) window.history.pushState({ page:p }, '', next);
+  }
+
+  go(p){ return ()=> { this.writeRoute(p); this.setState({ page:p }); }; }
 
   renderVals(){
     const accent = this.props.accent || '#f3c449';
@@ -2260,7 +2297,7 @@ class Component extends DCLogic {
     return {
       rootRef: this.rootRef,
       portalRef: this.portalRef, glRef: this.glRef, mechanismFieldRef: this.mechanismFieldRef, stageRef: this.stageRef, hlPlainRef: this.hlPlainRef, hlGradRef: this.hlGradRef,
-      showChrome: this.state.page !== 'home',
+      showChrome: this.state.page !== 'home' && this.state.page !== 'chat',
       navItems,
       goHome: this.go('home'), goMechanism: this.go('mechanism'), goNetwork: this.go('network'), goMine: this.go('mine'), goManifesto: this.go('manifesto'), goChat: this.go('chat'), goDesignSystem: this.go('designsystem'), goRationale: this.go('rationale'),
       isHome: this.state.page==='home',

@@ -6,6 +6,14 @@ Static prototype and visual system for Affine, built as a self-contained Design 
 
 GitHub Pages is configured to serve the project from the `main` branch.
 
+## Direct Routes
+
+- `/` - Landing page.
+- `/chat/` - Chat console.
+- `/design-system/` - Design system reference.
+- `/rationale/` - Rationale reference.
+- `/manifesto/` - Manifesto page.
+
 ## Files
 
 - `index.html` - Pages entry point for the main Affine prototype.
