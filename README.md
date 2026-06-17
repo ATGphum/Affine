@@ -10,11 +10,15 @@ GitHub Pages is configured to serve the project from the `main` branch.
 
 - `index.html` - Pages entry point for the main Affine prototype.
 - `Affine.dc.html` - Source Design Canvas HTML export for the main prototype.
+- `Affine Standalone.html` - Self-contained bundled export of the main prototype.
 - `Affine Design System.dc.html` - Design system reference.
+- `Affine Design System.html` - Self-contained bundled export of the design system.
 - `Affine Rationale.dc.html` - Rationale and narrative reference.
+- `Affine Rationale.html` - Self-contained bundled export of the rationale.
 - `DESIGN_LANGUAGE.md` - Design language notes.
 - `STATIC_VISUAL_SYSTEM.md` - Static visual system documentation.
 - `assets/` - Affine marks and supporting visual assets.
+- `screenshots/` - Preview screenshots from the exported bundle.
 - `support.js` and `frontier-field.js` - Runtime scripts used by the exported prototype.
 
 ## Local Preview

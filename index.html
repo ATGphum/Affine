@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#1c1c1c">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#1c1c1c"/>
+    <g fill="none" stroke="#f3c449" stroke-width="7" stroke-linejoin="round">
+      <circle cx="600" cy="400" r="156"/>
+      <path d="M600 268 L717 470 L483 470 Z"/>
+    </g>
+    <circle cx="600" cy="400" r="30" fill="#f3c449"/>
+  </svg>
+</template>
 </head>
 <body>
 <x-dc>
@@ -324,11 +334,11 @@
     header > div > div:last-child{ display:none !important; }
     header .af-lockup{ --af-logo-size:24px !important; --af-word-size:22px !important; gap:9px !important; }
     [data-screen-label="Home"]{ min-height:100svh !important; }
-    [data-hero-header]{ padding:20px 18px 10px !important; gap:12px !important; }
+    [data-hero-header]{ padding:20px 18px 10px !important; gap:8px !important; flex-wrap:wrap !important; }
     .af-hero-header::after{ left:18px !important; right:18px !important; opacity:.52 !important; }
-    [data-hero-nav]{ display:none !important; }
+    [data-hero-nav]{ display:flex !important; order:3 !important; flex:1 1 100% !important; flex-wrap:wrap !important; justify-content:center !important; margin-top:2px !important; }
     [data-hero-nav] button{ font-size:10px !important; letter-spacing:.055em !important; padding:6px 5px !important; }
-    [data-hero-nav] button:nth-child(n+3){ display:none !important; }
+    [data-hero-nav] button:nth-child(n+3){ display:inline-block !important; }
     [data-hero-header] .af-lockup{ --af-logo-size:24px !important; --af-word-size:21px !important; gap:9px !important; }
     [data-hero-header] .af-shell-lockup{ gap:0 !important; }
     .af-frame-corner{ width:28px !important; height:28px !important; opacity:.58 !important; }
@@ -340,7 +350,7 @@
     .af-frame-corner.br{ bottom:90px !important; right:18px !important; }
     .af-frame-label{ display:none !important; }
     [data-hero-stage]{ padding:0 20px 4px !important; justify-content:center !important; }
-    [data-hero-stage] h1{ max-width:100% !important; margin-top:8px !important; white-space:normal !important; overflow-wrap:anywhere !important; word-break:break-word !important; font-size:clamp(28px,8.4vw,34px) !important; }
+    [data-hero-stage] h1{ max-width:100% !important; margin-top:8px !important; white-space:normal !important; overflow-wrap:anywhere !important; word-break:break-word !important; font-size:clamp(34px,10.2vw,46px) !important; }
     [data-hero-stage] h1 span{ overflow-wrap:anywhere !important; word-break:break-word !important; }
     [data-hero-stage] h1 span:last-child{ display:inline !important; padding-right:0 !important; margin-right:0 !important; }
     [data-hero-stage] p{ width:100% !important; margin-top:12px !important; max-width:20em !important; overflow-wrap:break-word !important; font-size:13px !important; }
@@ -412,7 +422,7 @@
     .af-shell-nav-button:nth-child(n+3){ display:block !important; }
     .af-site-header nav button:nth-child(n+3){ display:block !important; }
     .af-shell-links{ display:none !important; }
-    [data-hero-nav]{ display:none !important; }
+    [data-hero-nav]{ display:flex !important; order:3 !important; flex:1 1 100% !important; flex-wrap:wrap !important; justify-content:center !important; margin-top:2px !important; }
     [data-hero-stage] h1{ max-width:100% !important; overflow-wrap:anywhere !important; word-break:break-word !important; }
     [data-hero-stage] h1 span{ overflow-wrap:anywhere !important; word-break:break-word !important; }
     [data-hero-stage] h1 span:last-child{ display:inline !important; padding-right:0 !important; margin-right:0 !important; }
