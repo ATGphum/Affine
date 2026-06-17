@@ -25,6 +25,7 @@ GitHub Pages is configured to serve the project from the `main` branch.
 - `Affine Rationale.dc.html` - Rationale and narrative reference.
 - `Affine Rationale.html` - Self-contained bundled export of the rationale.
 - `DESIGN_LANGUAGE.md` - Design language notes.
+- `LOGOS_PRODUCT_DOCTRINE.md` - Product doctrine for the LOGOS cloud agent interface.
 - `STATIC_VISUAL_SYSTEM.md` - Static visual system documentation.
 - `assets/` - Affine marks and supporting visual assets.
 - `screenshots/` - Preview screenshots from the exported bundle.
