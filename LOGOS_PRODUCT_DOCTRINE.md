@@ -32,6 +32,54 @@ The essential technical claim:
 
 > LOGOS improves model usefulness by surrounding Affine models with planning, tools, memory, machines, skills, validation, and control.
 
+The essential competitive claim:
+
+> LOGOS is not the most charming agent. It is the agent surface most able to turn intent into accountable work.
+
+## Strategic Wedge
+
+The market will fill with agents that promise everything. Many will compete on personality, model benchmarks, workflow lists, or vague autonomy. LOGOS should compete on a harder axis:
+
+> Can the user see work becoming true?
+
+LOGOS wins when it makes the invisible parts of agency visible:
+
+- what the model understood
+- what plan it formed
+- what tools it used
+- what machine state changed
+- what evidence was gathered
+- what artifact was produced
+- what was validated
+- what remains uncertain
+- what it will do next
+
+The enemy is not only other products. The enemy is unverifiable fluency: systems that sound competent while hiding whether real work happened.
+
+LOGOS should make a different promise:
+
+> Not just better answers. Better governed execution.
+
+This is where LOGOS can feel bigger than a chat product without becoming dishonest. The grandeur comes from turning language into accountable action.
+
+## Brand Constitution
+
+LOGOS has four non-negotiable laws.
+
+1. **Action over answer**
+   Every major surface should show the path from intent to action to artifact.
+
+2. **Proof over performance**
+   Confidence comes from traces, validation, and inspectable state, not theatrical language.
+
+3. **Memory over amnesia**
+   Useful context should persist, but it must be visible, editable, and bounded by user control.
+
+4. **Autonomy with handles**
+   LOGOS may continue work, but the user must always be able to inspect, pause, redirect, approve, or stop.
+
+If a page, demo, or claim violates these laws, it is not LOGOS.
+
 ## Relationship To Affine
 
 Affine is the intelligence and evaluation system.
@@ -108,6 +156,29 @@ Hermes can own the messenger, guide, agent, and companion archetype. LOGOS shoul
 
 This gives LOGOS its own lane. It can share underlying DNA with Affine while becoming a distinct product identity: Affine is the intelligence field; LOGOS is the field given hands, tools, memory, and proof.
 
+### Archetype
+
+LOGOS is the operating principle.
+
+It should feel ancient in name and modern in proof. The brand can touch philosophy, language, reason, and order, but the product must immediately ground that symbolism in controls, state, and artifacts.
+
+The archetype stack:
+
+- **Primary**: ordering principle
+- **Secondary**: execution harness
+- **Tertiary**: witness of work
+
+It is not:
+
+- a buddy
+- an oracle
+- a superhero
+- a cyberpunk assistant
+- a mystical being
+- a generic terminal skin
+
+The strongest LOGOS expression is quiet power: the user gives words, the system organizes reality around them, and the interface shows the work becoming accountable.
+
 ### Symbolic Primitives
 
 Use these as the symbolic language of LOGOS:
@@ -147,6 +218,12 @@ Avoid literal claims:
 
 The design can feel alive through state, rhythm, memory, and consequence. It should not claim life as a property.
 
+The right test:
+
+> Does LOGOS feel responsive because work is happening, or alive because copy is pretending?
+
+Choose the first every time.
+
 ### Mythic Copy Rules
 
 Good:
@@ -168,6 +245,38 @@ Bad:
 - "The brain of everything."
 
 LOGOS can be mythic in posture and precise in claim. That tension is the advantage.
+
+### Naming System
+
+Use names that make the system feel composed, not gimmicky.
+
+Preferred language:
+
+- run
+- loop
+- trace
+- artifact
+- memory
+- skill
+- machine
+- validation
+- seal
+- witness
+
+Use "seal" sparingly for validated state. Use "witness" sparingly for proof and trace. These words are allowed because they deepen the LOGOS myth while still mapping to concrete product concepts.
+
+Avoid playful or overly fantasy terms:
+
+- quest
+- spell
+- summon
+- familiar
+- prophecy
+- destiny
+- awakening
+- soul
+
+LOGOS should sound inevitable, not theatrical.
 
 ## North Star
 
@@ -665,6 +774,42 @@ Sharper:
 
 Avoid leading with infrastructure. Lead with useful work. Infrastructure can appear as an optional proof layer.
 
+### Narrative Ladder
+
+Use this ladder to keep messaging consistent across surfaces.
+
+**Mythic**
+
+> Word made operational.
+
+Use for identity moments, hero treatments, launch visuals, and the first impression.
+
+**Product**
+
+> The execution harness for Affine intelligence.
+
+Use for category definition, nav, docs, product pages, and investor or partner context.
+
+**User**
+
+> Bring a goal. LOGOS plans, acts, validates, and returns an artifact.
+
+Use for onboarding, empty states, and feature explanations.
+
+**Technical**
+
+> LOGOS wraps Affine models in tools, memory, machines, reusable procedures, traces, validation, and user controls.
+
+Use for architecture, developer context, and serious product explanation.
+
+**Proof**
+
+> Every run shows what happened, what changed, what was validated, and what remains uncertain.
+
+Use for trust sections, trace UI, run summaries, and demos.
+
+Do not mix all five levels in one small component. Choose the level the surface needs.
+
 ## Design Test
 
 Any LOGOS design should pass this test:
@@ -681,6 +826,23 @@ Any LOGOS design should pass this test:
 10. Does it feel like Affine DNA without becoming the Affine landing page?
 
 If it cannot answer these, it is not LOGOS yet.
+
+## 10/10 Bar
+
+A 10/10 LOGOS execution does all of this at once:
+
+1. The first impression is unmistakably LOGOS, not a generic agent console.
+2. The mythic line is present, but it is immediately backed by operational proof.
+3. The user can understand the current run without reading a paragraph.
+4. The interface shows plan, action, observation, validation, and artifact.
+5. Memory and skills feel useful, inspectable, and user-controlled.
+6. Remote execution feels powerful but bounded.
+7. Gold reads as validation, not decoration.
+8. The page feels alive through state changes, not through sentience claims.
+9. The product can explain how it improves over time without saying "self-evolving."
+10. The screen would still make sense if all marketing copy were removed.
+
+A design that is beautiful but fails proof is not 10/10. A design that is useful but has no symbolic force is not 10/10. LOGOS needs both: myth at the surface, mechanism underneath.
 
 ## Open Decisions
 

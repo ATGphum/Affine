@@ -18,6 +18,18 @@ The emotional thesis:
 
 The interface should make that line believable. A user enters words; the console turns them into structured work with state, evidence, and artifacts.
 
+## V0 Success Standard
+
+The screen is successful when a new visitor can say, within five seconds:
+
+1. "This is LOGOS."
+2. "It is more than chat."
+3. "It can do work on machines/tools."
+4. "I can see what it is doing."
+5. "It produces artifacts and proof."
+
+If the page only communicates mood, it fails. If it only communicates utility, it is forgettable. V0 needs both: a mythic first impression and a legible work system.
+
 ## Primary URL
 
 The direct route is:
@@ -91,6 +103,37 @@ Reason becomes execution.
 ```
 
 The LOGOS wordmark may be large, but it cannot be the only thing carrying the screen. The page must immediately show the machinery of action around it.
+
+## First-Screen Required Signals
+
+The first screen needs one identity signal, one intent signal, and five proof signals.
+
+Identity signal:
+
+- LOGOS wordmark plus myth line.
+
+Intent signal:
+
+- composer framed as a goal/invocation surface, not a message box.
+
+Proof signals:
+
+- active or ready run state
+- loop phase
+- machine/tool state
+- memory or skill state
+- artifact or artifact placeholder
+- trace or validation state
+
+At least five of the six proof signals must be visible without scrolling on desktop. On mobile, they may be stacked, collapsed, or represented as a compact status strip, but they must still be reachable from the first screen without burying the user in navigation.
+
+The first screen fails if LOGOS could be mistaken for:
+
+- a beautiful shell prompt
+- a generic LLM chat
+- an Affine subpage
+- a static brand poster
+- an infrastructure dashboard
 
 ## Screen Anatomy
 
@@ -552,6 +595,71 @@ Avoid:
 - Hermes-like messenger/wing motifs
 - consciousness or life claims presented as product facts
 
+## Screen Scoring Rubric
+
+Use this rubric to grade any LOGOS V0 mock.
+
+Each category scores 0, 1, or 2 points.
+
+1. **Identity**
+   0: could be any agent
+   1: says LOGOS but feels generic
+   2: unmistakably LOGOS
+
+2. **Myth**
+   0: no symbolic force
+   1: decorative myth
+   2: "word made operational" is felt and understood
+
+3. **Action**
+   0: chat only
+   1: action implied
+   2: tools, machines, or work state visibly active
+
+4. **Loop**
+   0: no process
+   1: vague progress
+   2: plan, act, observe, validate, and next step are legible
+
+5. **Proof**
+   0: no trace or validation
+   1: trace exists but is weak
+   2: evidence, changes, and validation are visible
+
+6. **Artifact**
+   0: no output object
+   1: artifact implied
+   2: artifact is visible, inspectable, or ready to open
+
+7. **Control**
+   0: no user handles
+   1: basic controls
+   2: pause, inspect, approve, stop, or equivalent controls are obvious
+
+8. **Memory / Skill**
+   0: one-off chat
+   1: continuity implied
+   2: memory or reusable procedure is visible and user-controllable
+
+9. **Honesty**
+   0: vague autonomy or consciousness claims
+   1: mostly honest but fuzzy
+   2: ambitious claims are tied to mechanisms
+
+10. **Composure**
+   0: noisy, generic, or overdesigned
+   1: attractive but uneven
+   2: restrained, iconic, and operational
+
+Score interpretation:
+
+- 0-11: not LOGOS yet
+- 12-15: promising direction
+- 16-18: ship-worthy prototype
+- 19-20: 10/10 direction
+
+Do not call a screen 10/10 unless it scores at least 19 and earns 2 points in Identity, Action, Proof, and Honesty.
+
 ## Information Architecture
 
 Minimum IA for V0:
@@ -665,6 +773,43 @@ LOGOS:
 ```
 
 This does not need to be fully functional for the visual prototype. It does need to be visually clear.
+
+## Launch Demo Bar
+
+The demo should feel like LOGOS is doing consequential work, not performing a scripted tour.
+
+A 10/10 demo has:
+
+- a specific user goal
+- visible uncertainty at the start
+- a plan that decomposes the work
+- at least one tool or machine action
+- at least one piece of evidence
+- at least one artifact
+- a validation moment
+- a user approval boundary
+- a memory or skill update only if it is concretely justified
+- a trace that can be inspected
+
+Recommended first demo framing:
+
+```text
+Goal
+Audit this repo, identify the breaking issue, prepare a patch plan, and validate the fix path.
+
+LOGOS run
+1. Reads repo context and prior project memory.
+2. Forms a fix loop.
+3. Opens a remote machine.
+4. Runs inspection commands.
+5. Finds the likely issue.
+6. Produces a patch plan or patch artifact.
+7. Runs validation or records the validation blocker.
+8. Seals the artifact as validated or explicitly unvalidated.
+9. Suggests a reusable repo-debug skill only if the trace supports it.
+```
+
+The key is not coding specifically. The key is visible transformation: ambiguous goal in, governed execution out.
 
 ## Open Product Questions
 
