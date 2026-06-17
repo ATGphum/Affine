@@ -1,35 +1,38 @@
 # LOGOS Product Doctrine
 
-LOGOS is the Affine cloud agent interface.
+LOGOS is the execution harness for Affine intelligence.
 
-It is not a chatbot. Chat is the control surface. LOGOS is the agentic layer where Affine intelligence plans, searches, codes, remembers, executes on remote machines, and turns networked infrastructure into useful work.
+It is not a chatbot. Chat is the control surface. LOGOS is the scaffolding that helps Affine models reason more reliably, use tools, manage context, run loops, execute on remote machines, and turn open-ended goals into useful work.
+
+The model is not magic by itself. LOGOS is the working environment around it: planning structure, memory, tools, machines, reusable procedures, validation, and artifacts.
 
 ## Relationship To Affine
 
 Affine is the intelligence and evaluation system.
 
-LOGOS is the operational embodiment of that intelligence.
+LOGOS is the operational harness for that intelligence.
 
 Affine defines the replacement rule, the validation grammar, and the compounding frontier. LOGOS applies that grammar to real user work: it asks, plans, tests, executes, stores context, returns artifacts, and reopens the next useful step.
 
 The relationship should feel like shared DNA, not a renamed product:
 
 - Affine is the protocol, doctrine, and source of intelligence.
-- LOGOS is the agentic cloud interface that makes Affine usable.
+- LOGOS is the execution scaffold that makes Affine usable.
 - Affine proves intelligence can compound.
 - LOGOS makes compounding intelligence actionable.
 
 ## Core Positioning
 
-LOGOS turns decentralized intelligence infrastructure into an agentic cloud workspace.
+LOGOS turns Affine intelligence into a cloud execution system.
 
 The product promise:
 
-> Give LOGOS a goal. It can reason, search, code, plan, remember, operate remote machines, and return useful artifacts through one web interface.
+> Give LOGOS a goal. It can plan, search, code, remember, operate remote machines, run loops, validate progress, and return useful artifacts through one web interface.
 
 LOGOS should be described as:
 
-- Affine's cloud agent.
+- The execution harness for Affine intelligence.
+- Affine's cloud agent interface.
 - A Bittensor-native agentic workspace.
 - A web interface for remote autonomous work.
 - A reasoning console that can execute, not just answer.
@@ -40,8 +43,40 @@ LOGOS should not be described as:
 - A wrapper around an LLM.
 - A generic assistant.
 - A copilot.
+- A self-evolving agent.
+- Magic.
 - A subnet showcase.
 - A partner/infrastructure directory.
+
+## Technical Framing
+
+LOGOS exists because LLMs often make mistakes when left alone.
+
+The product should be honest about that. LOGOS improves outcomes by wrapping Affine models in structure:
+
+- goal decomposition
+- planning and replanning
+- tool use
+- memory retrieval
+- reusable skill files and procedures
+- remote execution
+- verification loops
+- artifact production
+- human approval points when needed
+
+The core product claim is not "the model evolves itself." The claim is:
+
+> LOGOS gives Affine intelligence a managed environment for doing work.
+
+If LOGOS learns from use, describe the mechanism plainly:
+
+- it stores useful context
+- it summarizes prior work
+- it creates or updates reusable procedures
+- it remembers user/project preferences
+- it improves future runs through better scaffolding
+
+Avoid broad claims like "self-evolving" unless a concrete mechanism and evaluation standard are shown beside the claim.
 
 ## Infrastructure Principle
 
@@ -87,6 +122,21 @@ Runs are the unit of progress. They should expose state clearly:
 - complete
 - failed
 
+### Loops
+
+A loop is the repeated cycle of plan, act, observe, validate, and continue.
+
+Loops are how LOGOS turns chat into work. They should be visible and controllable:
+
+- what goal the loop is pursuing
+- what action is currently running
+- what evidence came back
+- what changed after the last step
+- why the next step is being taken
+- when the loop should stop, ask, or continue
+
+Loops should not feel endless by default. They need boundaries, progress signals, and user control.
+
 ### Machines
 
 A machine is a remote execution environment available to LOGOS.
@@ -112,6 +162,20 @@ Memory should not feel mystical. It is a product primitive with lifecycle and co
 - where it came from
 - when it was last used
 - whether the user can edit, pin, or delete it
+
+### Skills
+
+A skill is a reusable procedure LOGOS can apply in future runs.
+
+Skills are not proof of mystical self-improvement. They are operational scaffolds: instructions, checks, tool sequences, preferences, or workflows that make repeated work more reliable.
+
+Skill state should be legible:
+
+- what the skill does
+- when it was created or updated
+- what evidence made it useful
+- which projects or contexts use it
+- whether the user can inspect, edit, disable, or delete it
 
 ### Tools
 
@@ -152,11 +216,11 @@ Traces should make the system legible without overwhelming the default conversat
 
 The interface is chat-first, but not chat-only.
 
-The center column is the conversational command surface. The surrounding interface should reveal operational state:
+The center column is the conversational command surface. The surrounding interface should reveal the harness around the model:
 
-- left rail: projects, threads, memories, machines, saved workflows
+- left rail: projects, threads, memories, machines, saved workflows, skills
 - center: current thread and user input
-- right rail: live run state, tools, traces, files, artifacts, validation
+- right rail: live run state, loops, tools, traces, files, artifacts, validation
 
 The user should be able to interact at three levels:
 
@@ -182,7 +246,9 @@ Distinct to LOGOS:
 - console-like density
 - live status instrumentation
 - thread and run timelines
+- visible execution loops
 - memory and machine state
+- skill and procedure state
 - artifact shelves
 - a calmer product-operator voice
 
@@ -203,6 +269,7 @@ Avoid:
 - partner logo walls
 - heavy purple-blue agent aesthetics
 - chat bubbles as the only visual language
+- "self-evolving" visual tropes without a concrete mechanism
 
 ## Voice
 
@@ -222,6 +289,7 @@ Bad LOGOS voice:
 - "Here are some exciting possibilities!"
 - "As an AI language model..."
 - "I have magically handled everything."
+- "I evolved myself."
 - "Powered by an ecosystem of revolutionary subnets."
 
 ## Validation Grammar
@@ -250,12 +318,13 @@ The right hierarchy:
 
 1. User goal.
 2. Agent plan.
-3. Execution.
-4. Artifact.
-5. Validation.
-6. Optional infrastructure trace.
+3. Loop state.
+4. Execution.
+5. Artifact.
+6. Validation.
+7. Optional infrastructure trace.
 
-Bittensor is the substrate. LOGOS is the coherent brain and interface.
+Bittensor is the substrate. LOGOS is the execution harness and interface.
 
 ## Page Direction
 
@@ -264,10 +333,12 @@ The current LOGOS page should evolve from a chat mock into an agentic cloud cons
 Important on-screen signals:
 
 - LOGOS as the first-viewport identity.
-- "Affine cloud agent" or equivalent category label.
+- "Execution harness for Affine intelligence" or equivalent category label.
 - A visible run in progress.
+- A visible loop state.
 - A machine or execution state.
 - A memory/reference state.
+- A skill/procedure state.
 - An artifact/result panel.
 - A trace or validation panel.
 
@@ -281,6 +352,8 @@ The page should make one thing obvious:
 - Which actions require user approval?
 - What is the security model for remote machines?
 - What memory controls are mandatory at launch?
+- What skill/procedure lifecycle is credible at launch?
+- How are loops bounded, paused, resumed, and audited?
 - How visible should infrastructure routing be by default?
 - What is the minimum credible artifact flow for the first demo?
 - How does LOGOS expose cost, quota, or resource usage?
@@ -288,4 +361,4 @@ The page should make one thing obvious:
 
 ## One-Sentence North Star
 
-LOGOS is the Affine cloud agent: a Bittensor-native interface for reasoning, executing, remembering, and producing useful work through one web console.
+LOGOS is the execution harness for Affine intelligence: a Bittensor-native web console for planning, tool use, memory, remote execution, validation loops, and useful artifacts.
