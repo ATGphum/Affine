@@ -10,6 +10,7 @@ GitHub Pages is configured to serve the project from the `main` branch.
 
 - `index.html` - Pages entry point for the main Affine prototype.
 - `Affine.dc.html` - Source Design Canvas HTML export for the main prototype.
+- `Affine Chat.dc.html` - Source Design Canvas HTML export for the chat console.
 - `Affine Standalone.html` - Self-contained bundled export of the main prototype.
 - `Affine Design System.dc.html` - Design system reference.
 - `Affine Design System.html` - Self-contained bundled export of the design system.

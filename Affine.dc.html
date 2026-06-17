@@ -1146,6 +1146,15 @@
   </sc-if>
 
   <!-- ========================================================= -->
+  <!-- CHAT -->
+  <!-- ========================================================= -->
+  <sc-if value="{{ isChat }}" hint-placeholder-val="{{ true }}">
+  <div data-screen-label="Chat">
+    <dc-import name="Affine Chat" hint-size="100%,920px"></dc-import>
+  </div>
+  </sc-if>
+
+  <!-- ========================================================= -->
   <!-- RATIONALE -->
   <!-- ========================================================= -->
   <sc-if value="{{ isRationale }}" hint-placeholder-val="{{ true }}">
@@ -1990,8 +1999,8 @@ class Component extends DCLogic {
       })
     };
 
-    const pages = ['designsystem','rationale','manifesto'];
-    const labels = { mechanism:'Mechanism', network:'Network', mine:'Mine', manifesto:'Manifesto', designsystem:'Design System', rationale:'Rationale' };
+    const pages = ['chat','designsystem','rationale','manifesto'];
+    const labels = { mechanism:'Mechanism', network:'Network', mine:'Mine', manifesto:'Manifesto', chat:'Chat', designsystem:'Design System', rationale:'Rationale' };
     const navItems = pages.map((p)=>({ label:labels[p], active:this.state.page===p, onClick:this.go(p) }));
 
     const stats = [
@@ -2253,12 +2262,13 @@ class Component extends DCLogic {
       portalRef: this.portalRef, glRef: this.glRef, mechanismFieldRef: this.mechanismFieldRef, stageRef: this.stageRef, hlPlainRef: this.hlPlainRef, hlGradRef: this.hlGradRef,
       showChrome: this.state.page !== 'home',
       navItems,
-      goHome: this.go('home'), goMechanism: this.go('mechanism'), goNetwork: this.go('network'), goMine: this.go('mine'), goManifesto: this.go('manifesto'), goDesignSystem: this.go('designsystem'), goRationale: this.go('rationale'),
+      goHome: this.go('home'), goMechanism: this.go('mechanism'), goNetwork: this.go('network'), goMine: this.go('mine'), goManifesto: this.go('manifesto'), goChat: this.go('chat'), goDesignSystem: this.go('designsystem'), goRationale: this.go('rationale'),
       isHome: this.state.page==='home',
       isMechanism: this.state.page==='mechanism',
       isNetwork: this.state.page==='network',
       isMine: this.state.page==='mine',
       isManifesto: this.state.page==='manifesto',
+      isChat: this.state.page==='chat',
       isDesignSystem: this.state.page==='designsystem',
       isRationale: this.state.page==='rationale',
       grainOn: this.props.grain !== false,
