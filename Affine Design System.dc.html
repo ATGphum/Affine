@@ -46,9 +46,11 @@
     [style*="repeat(4,"],
     [style*="repeat(5,"],
     [style*="1fr 1fr"],
-    [style*="130px 1fr"],
-    [style*="90px 80px"],
-    [style*="48px 1.5fr"]{ grid-template-columns:1fr !important; gap:10px !important; }
+    [style*="130px 1fr"]{ grid-template-columns:1fr !important; gap:10px !important; }
+    .ds-section [style*="overflow: hidden"]{ overflow-x:auto !important; -webkit-overflow-scrolling:touch; }
+    [style*="1.6fr 90px"]{ min-width:540px !important; }
+    [style*="48px 1.5fr"]{ min-width:660px !important; }
+    .ds-section [style*="font-size: 48px"]{ font-size:30px !important; }
   }
 </style>
 </helmet>
