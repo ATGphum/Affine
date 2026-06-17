@@ -13,6 +13,9 @@ GitHub Pages is configured to serve the project from the `main` branch.
 - `/design-system/` - Design system reference.
 - `/rationale/` - Rationale reference.
 - `/manifesto/` - Manifesto page.
+- `/mechanism/` - Mechanism page.
+- `/network/` - Network page.
+- `/mine/` - Mine page.
 
 ## Files
 
@@ -26,6 +29,7 @@ GitHub Pages is configured to serve the project from the `main` branch.
 - `Affine Rationale.html` - Self-contained bundled export of the rationale.
 - `DESIGN_LANGUAGE.md` - Design language notes.
 - `LOGOS_PRODUCT_DOCTRINE.md` - Product doctrine for the LOGOS cloud agent interface.
+- `LOGOS_V0_INTERFACE_SPEC.md` - Build-facing interface spec for the first LOGOS console.
 - `STATIC_VISUAL_SYSTEM.md` - Static visual system documentation.
 - `assets/` - Affine marks and supporting visual assets.
 - `screenshots/` - Preview screenshots from the exported bundle.

@@ -74,6 +74,8 @@ LOGOS should never sound like a thin UI over an LLM. It should also never sound 
 
 LOGOS is the execution harness for Affine intelligence: a Bittensor-native web console for planning, tool use, memory, remote execution, validation loops, and useful artifacts.
 
+For screen-level requirements, use `LOGOS_V0_INTERFACE_SPEC.md`. This doctrine defines the product truth; the interface spec defines what the first credible LOGOS page must show.
+
 ## Product Promise
 
 LOGOS should make one promise and earn it:
