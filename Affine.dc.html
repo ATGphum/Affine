@@ -352,7 +352,7 @@
     [data-hero-stage]{ padding:0 20px 4px !important; justify-content:center !important; }
     [data-hero-stage] h1{ max-width:100% !important; margin-top:8px !important; white-space:normal !important; overflow-wrap:anywhere !important; word-break:break-word !important; font-size:clamp(34px,10.2vw,46px) !important; }
     [data-hero-stage] h1 span{ overflow-wrap:anywhere !important; word-break:break-word !important; }
-    [data-hero-stage] h1 span:last-child{ display:inline !important; padding-right:0 !important; margin-right:0 !important; }
+    [data-hero-stage] h1 span:last-child{ display:inline-block !important; min-width:7.1em !important; text-align:left !important; padding-right:0 !important; margin-right:0 !important; }
     [data-hero-stage] p{ width:100% !important; margin-top:12px !important; max-width:20em !important; overflow-wrap:break-word !important; font-size:13px !important; }
     [data-hero-champion]{ padding:10px 18px 12px !important; }
     [data-hero-champion] > div{ gap:9px 14px !important; font-size:10px !important; letter-spacing:.055em !important; }
@@ -1271,8 +1271,7 @@ class Component extends DCLogic {
     }
     const N = 46;
     const bootStart = performance.now();
-    const compactHero = window.matchMedia && window.matchMedia('(max-width: 480px)').matches;
-    if(this.props.motion === false || compactHero){
+    if(this.props.motion === false){
       if(this.hlPlainRef.current) this.hlPlainRef.current.textContent = 'Mine open ';
       if(this.hlGradRef.current) this.hlGradRef.current.textContent = 'reasoning';
     } else {
@@ -1861,10 +1860,6 @@ class Component extends DCLogic {
   startWordCycle(){
     const el = this.hlGradRef.current;
     if(!el || this._wordTimer) return;
-    if(window.matchMedia && window.matchMedia('(max-width: 480px)').matches){
-      el.textContent = 'reasoning';
-      return;
-    }
     const words = ['reasoning','intelligence','deduction','abduction','cognition'];
     let idx = 0;
     el.style.transition = 'none';
