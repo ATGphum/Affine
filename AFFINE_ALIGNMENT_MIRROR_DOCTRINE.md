@@ -68,6 +68,29 @@ The shortest product line:
 
 > The alignment layer for open intelligence.
 
+## Internal Logic, Public Identity
+
+The Bittensor mirror is core to the design direction, but it should not become a public gimmick.
+
+Internally, the mirror explains why the system is so restrained:
+
+- why the palette is inverted
+- why the layout is sparse
+- why the nav is tiny
+- why longform pages feel like protocol papers
+- why the Affine mark is treated as a central symbol
+- why gold is rare and semantic
+
+Publicly, Affine should lead with its own identity:
+
+> The alignment layer for open intelligence.
+
+The Bittensor relationship can appear as a single clarifying line:
+
+> Bittensor is the incentive layer. Affine is the alignment layer.
+
+Do not make "mirror of Bittensor" the headline. The design should make the kinship felt. The copy should use the relationship only when it sharpens understanding.
+
 ## Message Hierarchy
 
 Every Affine Alignment Mirror page should preserve this order.
@@ -75,21 +98,21 @@ Every Affine Alignment Mirror page should preserve this order.
 1. **Category**
    Affine is the alignment layer for open intelligence.
 
-2. **Contrast**
-   Bittensor is the incentive layer. Affine is the alignment layer.
-
-3. **Mechanism**
+2. **Mechanism**
    Affine evaluates, aligns, resolves, inherits, and reopens the frontier.
 
-4. **Proof**
+3. **Proof**
    Validated intelligence becomes the next baseline.
+
+4. **Contrast**
+   Bittensor is the incentive layer. Affine is the alignment layer.
 
 5. **Invitation**
    Explore the mechanism, rationale, or operational surface.
 
 Do not start with community, ecosystem, token, agent, product dashboard, or LOGOS. Those may matter later, but they are not the opening definition of this direction.
 
-The first page must make the alignment/incentive relationship obvious before asking the user to understand anything else.
+The first page must make alignment obvious before asking the user to understand anything else. The Bittensor contrast should be available, but it does not need to dominate the first impression.
 
 ## One-Page Canon
 
@@ -368,7 +391,7 @@ Purpose:
 
 - establish Affine as the alignment layer
 - show the Affine mark as a canonical symbol
-- create the Bittensor mirror instantly
+- create protocol-level kinship without requiring the viewer to know Bittensor
 - avoid explaining too much too soon
 
 First viewport:
@@ -383,11 +406,11 @@ rare gold accent
 
 Recommended line:
 
-> Incentives produce intelligence. Alignment decides what survives.
+> The alignment layer for open intelligence.
 
 Alternate line:
 
-> The alignment layer for open intelligence.
+> Incentives produce intelligence. Alignment decides what survives.
 
 Do not use cards, feature grids, marketing hero copy, bright illustration, or startup-style CTA clusters in the first viewport.
 
@@ -471,6 +494,8 @@ Expanded:
 
 > Bittensor creates the market conditions for open intelligence. Affine defines the grammar by which intelligence is evaluated, selected, inherited, and reopened.
 
+Use this relationship sparingly on public surfaces. It is strongest as a single contrast line, not as repeated positioning. Affine should still make sense to someone who has never seen the Bittensor website.
+
 ### Mechanism
 
 Use:
@@ -497,11 +522,15 @@ Use or adapt this copy for first design explorations.
 
 Home theorem:
 
-> Incentives produce intelligence. Alignment decides what survives.
+> The alignment layer for open intelligence.
 
 Home support line:
 
 > Affine evaluates, aligns, composes, and inherits distributed intelligence so useful progress can compound.
+
+Optional contrast line:
+
+> Bittensor is the incentive layer. Affine is the alignment layer.
 
 Rationale abstract:
 

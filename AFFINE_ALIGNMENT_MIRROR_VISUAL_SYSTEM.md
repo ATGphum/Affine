@@ -16,6 +16,12 @@ The doctrine defines meaning. This document defines rendering.
 
 Affine should look like the color-inverted counterpart to the official Bittensor website.
 
+This is the internal design logic, not the public headline. Publicly, Affine should lead as:
+
+> The alignment layer for open intelligence.
+
+The Bittensor relationship should be felt through restraint, inversion, spacing, and protocol-paper rhythm. It should be stated only when the contrast helps the user understand Affine faster.
+
 The reference aesthetic is:
 
 - white ground
@@ -420,11 +426,11 @@ no explanatory block
 
 Recommended thesis:
 
-> Incentives produce intelligence. Alignment decides what survives.
+> The alignment layer for open intelligence.
 
 Alternate:
 
-> The alignment layer for open intelligence.
+> Incentives produce intelligence. Alignment decides what survives.
 
 Footer proof line:
 
@@ -472,11 +478,12 @@ center:
   affine-mark-clean.png
 
 below center:
-  Incentives produce intelligence.
-  Alignment decides what survives.
+  The alignment layer
+  for open intelligence.
 
 bottom center or lower field:
   Evaluate. Align. Compose. Inherit. Reopen.
+  Optional: Bittensor is incentive. Affine is alignment.
 ```
 
 Mobile structure:
