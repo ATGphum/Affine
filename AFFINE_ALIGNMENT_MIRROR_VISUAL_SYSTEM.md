@@ -260,15 +260,37 @@ Do not use gold for:
 
 The type system should match the spirit and metrics of Bittensor's site as closely as possible: small, sparse, protocol-like, and academic.
 
-If implementing from the live Bittensor site, inspect the current font stack and match it where licensing and technical constraints allow.
+As of this handoff, Bittensor's live CSS declares these font families:
 
-If fonts are unavailable, use this fallback:
+```text
+Haffer
+HafferSQ
+TTCommonsPro
+FiraCode
+DM Mono
+```
+
+Use those families where licensing and technical constraints allow. Do not assume they are freely reusable in production without checking licensing.
+
+Recommended Affine stack:
+
+```text
+Body / headings: Haffer, HafferSQ, Helvetica Neue, Arial, sans-serif
+Mono labels: FiraCode, DM Mono, TTCommonsPro, SFMono-Regular, Menlo, Consolas, monospace
+Equations: KaTeX_Main, STIX Two Text, Times New Roman, serif
+```
+
+If the Bittensor fonts are unavailable, use this fallback:
 
 ```text
 Body / headings: Inter, Helvetica Neue, Arial, sans-serif
 Mono labels: IBM Plex Mono, SFMono-Regular, Menlo, Consolas, monospace
 Equations: STIX Two Text, Times New Roman, serif
 ```
+
+Designer note:
+
+The first Affine visual pass should try the Bittensor-declared stack first. Only fall back if licensing, rendering, or availability makes that impractical.
 
 ### Type Roles
 
