@@ -12,6 +12,32 @@ Companion document:
 
 Use this doctrine for strategy, message, posture, page intent, and review criteria. Use the visual system for color, type, layout, components, page structure, and implementation rules.
 
+## Handoff Contract
+
+These two documents are intended to leave the original project and stand alone.
+
+A designer receiving only:
+
+1. `AFFINE_ALIGNMENT_MIRROR_DOCTRINE.md`
+2. `AFFINE_ALIGNMENT_MIRROR_VISUAL_SYSTEM.md`
+3. `affine-mark-clean.png`
+
+should be able to create an initial Affine design direction without asking for the older Affine docs.
+
+The designer should still inspect the live Bittensor website before final execution, because this direction depends on mirroring its current restraint, spacing, navigation scale, longform rhythm, and protocol-paper posture. The goal is not to copy Bittensor's exact assets. The goal is to translate its seriousness into Affine's opposite pole.
+
+Required designer output from this handoff:
+
+- one landing page concept
+- one longform rationale page
+- one mechanism page or mechanism section
+- one design-system/token page
+- desktop and mobile first viewport states
+- at least one diagram showing evaluation, resolution, and inheritance
+- a short written note explaining where the design mirrors Bittensor and where it departs
+
+If the designer cannot produce those artifacts from these docs, the docs are incomplete.
+
 ## Core Thesis
 
 Bittensor is the incentive layer for open intelligence.
@@ -41,6 +67,29 @@ The strategic phrase:
 The shortest product line:
 
 > The alignment layer for open intelligence.
+
+## Message Hierarchy
+
+Every Affine Alignment Mirror page should preserve this order.
+
+1. **Category**
+   Affine is the alignment layer for open intelligence.
+
+2. **Contrast**
+   Bittensor is the incentive layer. Affine is the alignment layer.
+
+3. **Mechanism**
+   Affine evaluates, aligns, resolves, inherits, and reopens the frontier.
+
+4. **Proof**
+   Validated intelligence becomes the next baseline.
+
+5. **Invitation**
+   Explore the mechanism, rationale, or operational surface.
+
+Do not start with community, ecosystem, token, agent, product dashboard, or LOGOS. Those may matter later, but they are not the opening definition of this direction.
+
+The first page must make the alignment/incentive relationship obvious before asking the user to understand anything else.
 
 ## One-Page Canon
 
@@ -162,6 +211,42 @@ The design should feel like conceptual kinship, not counterfeit.
 The best interpretation:
 
 > Same civilization. Opposite pole.
+
+## Mirror, Not Clone
+
+This direction deliberately mirrors Bittensor, but a mirror is not a clone.
+
+Mirror:
+
+- restraint
+- centered composition
+- paper-like longform rhythm
+- tiny nav
+- mathematical seriousness
+- symbolic first viewport
+- protocol-level silence
+
+Do not clone:
+
+- Bittensor's mark
+- Bittensor's exact diagrams
+- Bittensor's copy
+- Bittensor's white background
+- Bittensor's identity as an incentive market
+- Bittensor's navigation labels if they do not fit Affine
+- any asset, figure, equation, or whitepaper fragment that belongs to Bittensor
+
+Affine must earn its difference through meaning:
+
+- black instead of white
+- alignment instead of incentive
+- gold validation instead of monochrome network signal
+- selection and inheritance instead of production and reward
+- judgment instead of market formation
+
+If a viewer says "this looks like Bittensor but black," the design is not finished.
+
+If a viewer says "this feels like the missing counterpart to Bittensor," the design is working.
 
 ## What Affine Is
 
@@ -406,6 +491,40 @@ Expanded:
 
 > Gold marks validated state: a result, threshold, lineage, or replacement event that has earned inheritance.
 
+### Page Copy Starter Kit
+
+Use or adapt this copy for first design explorations.
+
+Home theorem:
+
+> Incentives produce intelligence. Alignment decides what survives.
+
+Home support line:
+
+> Affine evaluates, aligns, composes, and inherits distributed intelligence so useful progress can compound.
+
+Rationale abstract:
+
+> Open intelligence can produce capability without producing continuity. Markets can discover useful work, but discovery alone does not decide what should be retained, composed, replaced, or inherited. Affine defines the alignment layer that turns distributed output into cumulative progress.
+
+Mechanism intro:
+
+> Independent capabilities enter the field. Shared evaluation pressure makes them comparable. Weak paths recede. Useful paths resolve. Validated progress is inherited, and the frontier opens again.
+
+Bittensor relationship:
+
+> Bittensor creates the incentive conditions for open intelligence. Affine defines the alignment grammar that lets useful intelligence survive beyond any single run, model, miner, or epoch.
+
+Validation line:
+
+> Gold marks the point at which output becomes inheritance.
+
+Footer line:
+
+> Diverge. Evaluate. Align. Resolve. Inherit. Reopen.
+
+Avoid expanding these into marketing paragraphs on the landing page. The first screen should stay theorem-like.
+
 ## Design Laws
 
 1. **Plainness is authority**
@@ -526,4 +645,3 @@ The first impression should not say "AI startup."
 It should say:
 
 > This is the mechanism by which open intelligence learns what should survive.
-

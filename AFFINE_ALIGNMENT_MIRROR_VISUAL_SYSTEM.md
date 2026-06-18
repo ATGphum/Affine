@@ -46,6 +46,48 @@ The governing sentence:
 
 > Black paper. White theorem. Gold validation.
 
+## Designer Deliverables
+
+The first design pass should include these frames:
+
+1. `00 Reference / Bittensor Mirror Notes`
+2. `01 Home / Desktop`
+3. `02 Home / Mobile`
+4. `03 Rationale / Desktop`
+5. `04 Rationale / Mobile`
+6. `05 Mechanism / Desktop`
+7. `06 Design System / Tokens`
+8. `07 Diagram Primitives`
+9. `08 LOGOS Relationship / Optional`
+10. `99 Review / Scoring`
+
+The design file should include a short annotation on the first frame:
+
+```text
+Affine mirrors Bittensor's restraint, centered protocol composition, longform paper rhythm, and tiny navigation.
+Affine departs through blackpaper atmosphere, gold validation, alignment semantics, inheritance diagrams, and the Affine mark.
+```
+
+Do not begin with a large component library. Begin with the first viewport, the longform page rhythm, and the mechanism diagram. Components should emerge from those.
+
+## Inversion Mapping
+
+Use this table when translating Bittensor's visual grammar into Affine.
+
+| Bittensor reference | Affine inversion | Meaning |
+| --- | --- | --- |
+| white background | black background | blackpaper field |
+| black text | white text | theorem / proof |
+| tau mark | Affine mark | alignment symbol |
+| network object | alignment mark / mechanism diagram | judgment and inheritance |
+| incentive language | alignment language | survival, validation, composition |
+| monochrome rigor | monochrome plus rare gold | validation has been earned |
+| longform whitepaper | longform blackpaper | protocol thesis inverted |
+| equations | equations / matrices / thresholds | mechanism proof |
+| silence | silence | authority through restraint |
+
+This is the core translation. Do not add decorative layers to make the inversion more obvious.
+
 ## Required Asset
 
 Primary mark:
@@ -415,6 +457,60 @@ Do not:
 
 If motion is used, it should be nearly imperceptible: a slow reveal, not a performance.
 
+## Golden First Viewport
+
+The first viewport must be understandable as a still image.
+
+Desktop structure:
+
+```text
+top left: tiny Affine text mark or small symbol
+top center: ABOUT / RATIONALE / MECHANISM / LOGOS / DOCS
+top right: optional WHITEPAPER or ENTER LOGOS
+
+center:
+  affine-mark-clean.png
+
+below center:
+  Incentives produce intelligence.
+  Alignment decides what survives.
+
+bottom center or lower field:
+  Evaluate. Align. Compose. Inherit. Reopen.
+```
+
+Mobile structure:
+
+```text
+top left: small Affine mark
+top right: MENU
+
+center:
+  affine-mark-clean.png
+
+below center:
+  The alignment layer
+  for open intelligence.
+
+lower:
+  Evaluate. Inherit. Reopen.
+```
+
+First viewport rules:
+
+- no cards
+- no hero paragraph
+- no primary CTA button
+- no social proof strip
+- no partner logos
+- no animated background
+- no explanatory diagram unless the mark itself is the diagram
+- no more than two lines of thesis copy
+
+The opening must feel almost empty. That emptiness is the claim.
+
+If the first viewport feels "safe" in a conventional startup sense, it is probably not brave enough.
+
 ## Longform Pages
 
 Longform pages should feel like blackpaper sections.
@@ -455,6 +551,39 @@ Affine defines the conditions under which useful intelligence is retained...
 - Equations should sit alone with breathing room.
 - Diagrams should be centered and quiet.
 - Gold may identify the resolved or inherited part of a diagram.
+
+### Longform Rhythm
+
+Use this approximate rhythm on rationale and manifesto pages:
+
+```text
+title block
+128px gap
+00 / ABSTRACT
+body paragraph group
+128px gap
+figure or equation
+128px gap
+01 / SECTION
+body paragraph group
+```
+
+The longform page should feel slow in a good way. The user should feel that each section is being placed, not streamed.
+
+Paragraph groups should usually contain two to four paragraphs. Do not create dense essay walls.
+
+### Longform Content Requirements
+
+Every rationale page must include:
+
+- the incentive/alignment distinction
+- the problem of non-cumulative intelligence
+- the Affine mechanism sequence
+- one diagram or equation
+- one gold validation/inheritance moment
+- a closing statement that reopens the frontier
+
+If the page only argues philosophically and never shows mechanism, it is incomplete.
 
 ## Diagram Language
 
@@ -527,6 +656,30 @@ Rules:
 Do not fake rigor with meaningless formulas.
 
 If an equation appears, it must correspond to an actual concept on the page.
+
+## Canonical Mechanism Diagram
+
+Every first design pass should include one canonical Affine mechanism diagram.
+
+It should show:
+
+```text
+candidate inputs -> evaluation pressure -> resolved path -> gold inheritance line -> reopened candidates
+```
+
+Visual requirements:
+
+- candidates are faint white
+- evaluation pressure is a thin white threshold, matrix, or axis
+- resolved path is clearer white
+- inherited state is gold
+- reopened candidates are faint white after the gold state
+
+Caption:
+
+> FIG. 01 / Alignment converts evaluated output into inherited frontier.
+
+Do not make the diagram a generic network sphere. The diagram must show selection and inheritance.
 
 ## Component Language
 
@@ -809,6 +962,69 @@ Before calling a design complete, answer:
 9. Does the design still work if animations are disabled?
 10. Does it feel like Affine could belong in the Bittensor world without pretending to be Bittensor?
 
+## Scoring Rubric
+
+Score each category 0, 1, or 2.
+
+1. **Mirror**
+   0: no clear Bittensor relationship
+   1: visually similar but not conceptually clear
+   2: unmistakable inverted counterpart
+
+2. **Independence**
+   0: feels like a clone
+   1: has some Affine cues
+   2: clearly Affine through alignment, gold validation, and mark usage
+
+3. **Plainness**
+   0: too much marketing/UI clutter
+   1: minimal but still conventional
+   2: brave, sparse, protocol-like
+
+4. **Alignment**
+   0: unclear what Affine does
+   1: alignment stated but not shown
+   2: alignment is visible in copy and mechanism
+
+5. **Gold Discipline**
+   0: gold is decorative
+   1: mostly meaningful
+   2: every gold moment is earned
+
+6. **Longform Authority**
+   0: reads like marketing
+   1: somewhat paper-like
+   2: reads like a blackpaper/protocol artifact
+
+7. **Diagram Proof**
+   0: no mechanism diagram
+   1: diagram exists but is generic
+   2: diagram shows evaluation, resolution, inheritance, and reopening
+
+8. **Typography**
+   0: generic web typography
+   1: close but inconsistent
+   2: tiny nav, controlled hierarchy, paper-like reading rhythm
+
+9. **Mobile**
+   0: collapses into generic mobile page
+   1: mostly preserves the direction
+   2: keeps the blackpaper identity intact
+
+10. **Memorability**
+   0: forgettable
+   1: tasteful but not iconic
+   2: plainness becomes the memorable move
+
+Score interpretation:
+
+- 0-11: not the direction
+- 12-15: useful exploration
+- 16-18: strong candidate
+- 19-20: 10/10 candidate
+
+Do not call a design 10/10 unless it scores 19 or 20 and earns 2 points in Mirror, Independence, Alignment, and Gold Discipline.
+
 ## 10/10 Visual Bar
 
 A 10/10 execution:
@@ -837,4 +1053,3 @@ Affine's world is black paper, white alignment theorem, and gold validated inher
 The landing page should be so plain that it feels brave.
 
 The deeper pages should be so rigorous that the plainness feels earned.
-
