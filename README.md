@@ -28,6 +28,8 @@ GitHub Pages is configured to serve the project from the `main` branch.
 - `Affine Rationale.dc.html` - Rationale and narrative reference.
 - `Affine Rationale.html` - Self-contained bundled export of the rationale.
 - `DESIGN_LANGUAGE.md` - Design language notes.
+- `AFFINE_ALIGNMENT_MIRROR_DOCTRINE.md` - Standalone doctrine for the blackpaper / Bittensor-mirror Affine direction.
+- `AFFINE_ALIGNMENT_MIRROR_VISUAL_SYSTEM.md` - Standalone visual system for the blackpaper / Bittensor-mirror Affine direction.
 - `LOGOS_PRODUCT_DOCTRINE.md` - Product doctrine for the LOGOS cloud agent interface.
 - `LOGOS_V0_INTERFACE_SPEC.md` - Build-facing interface spec for the first LOGOS console.
 - `STATIC_VISUAL_SYSTEM.md` - Static visual system documentation.
