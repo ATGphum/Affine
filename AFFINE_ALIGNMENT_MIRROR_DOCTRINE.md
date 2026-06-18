@@ -24,6 +24,8 @@ A designer receiving only:
 
 should be able to create an initial Affine design direction without asking for the older Affine docs.
 
+The Lambda micro mark may begin as the glyph `Λ` in early design exploration. For final production, it should become an optically tuned Affine Lambda asset derived from the geometry and attitude of `affine-mark-clean.png`.
+
 The designer should still inspect the live Bittensor website before final execution, because this direction depends on mirroring its current restraint, spacing, navigation scale, longform rhythm, and protocol-paper posture. The goal is not to copy Bittensor's exact assets. The goal is to translate its seriousness into Affine's opposite pole.
 
 Required designer output from this handoff:
@@ -90,6 +92,49 @@ The Bittensor relationship can appear as a single clarifying line:
 > Bittensor is the incentive layer. Affine is the alignment layer.
 
 Do not make "mirror of Bittensor" the headline. The design should make the kinship felt. The copy should use the relationship only when it sharpens understanding.
+
+## Symbol System
+
+Bittensor's small mark is essentially tau: `τ`.
+
+Affine's small mark should be Lambda: `Λ`.
+
+This is one of the cleanest parts of the mirror system. It lets the relationship work at symbol scale without requiring explanatory copy.
+
+Use the symbol hierarchy this way:
+
+```text
+small contexts: Λ
+large contexts: full Affine mark language derived from affine-mark-clean.png
+```
+
+Small contexts include:
+
+- favicon
+- mobile nav
+- tiny desktop nav
+- page corner mark
+- social avatar
+- compact footer mark
+- loading state
+- tiny document stamp
+
+Large contexts include:
+
+- landing page center
+- manifesto/rationale title moments
+- poster compositions
+- launch visuals
+- full-page identity moments
+- diagrammatic identity explorations
+
+The `Λ` should feel like Affine's equivalent of `τ`: simple, protocol-native, mathematical, and instantly legible at tiny sizes.
+
+The large mark should not be a bigger Lambda. It should go all the way into the richer Affine identity: forms, cuts, geometry, gold treatments, and compositions derived from `affine-mark-clean.png`.
+
+The rule:
+
+> Lambda is the signature. The Affine mark is the monument.
 
 ## Message Hierarchy
 

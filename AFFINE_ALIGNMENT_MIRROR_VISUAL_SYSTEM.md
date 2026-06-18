@@ -84,7 +84,7 @@ Use this table when translating Bittensor's visual grammar into Affine.
 | --- | --- | --- |
 | white background | black background | blackpaper field |
 | black text | white text | theorem / proof |
-| tau mark | Affine mark | alignment symbol |
+| tau mark | Lambda micro mark / full Affine mark | alignment symbol |
 | network object | alignment mark / mechanism diagram | judgment and inheritance |
 | incentive language | alignment language | survival, validation, composition |
 | monochrome rigor | monochrome plus rare gold | validation has been earned |
@@ -94,11 +94,56 @@ Use this table when translating Bittensor's visual grammar into Affine.
 
 This is the core translation. Do not add decorative layers to make the inversion more obvious.
 
-## Required Asset
+## Mark System
 
-Primary mark:
+Affine has a two-level mark system.
 
-`affine-mark-clean.png`
+### Micro Mark
+
+Use `Λ` as the small Affine mark.
+
+Purpose:
+
+- favicon
+- small nav
+- mobile header
+- social avatar
+- document stamp
+- compact footer
+- tiny loading state
+- protocol shorthand
+
+The Lambda mark is Affine's answer to Bittensor's tau mark.
+
+It should feel mathematical, minimal, and protocol-native.
+
+Rendering:
+
+```text
+glyph: Λ
+primary color: gold-validation or ink-white
+minimum digital size: 16px
+preferred nav size: 18px to 24px
+weight: optically medium/heavy
+alignment: centered on visual cap height
+```
+
+Production note:
+
+The first prototype may use a high-quality type glyph. Final production should use an optically tuned custom Lambda derived from the Affine mark's geometry, not a random font glyph.
+
+Do not:
+
+- put Lambda in a circle by default
+- add glow
+- add gradients
+- stylize it into a luxury monogram
+- use it as a decorative repeating pattern
+- make it compete with the full mark on large screens
+
+### Monument Mark
+
+Use `affine-mark-clean.png` for large identity moments.
 
 Expected properties:
 
@@ -109,7 +154,25 @@ Expected properties:
 
 If the mark is unavailable, stop and obtain it. Do not approximate the mark with text, CSS, SVG recreation, or placeholder geometry.
 
-The mark is not decorative. It is the protocol symbol.
+The monument mark is not decorative. It is the protocol symbol at full force.
+
+Use it for:
+
+- landing page center
+- large identity moments
+- manifesto openers
+- launch visuals
+- full-page poster treatments
+- derived geometry and styles
+
+The rule:
+
+```text
+small sizes: Lambda
+large sizes: affine-mark-clean.png and styles derived from it
+```
+
+Do not use the full mark so small that it loses detail. Do not use raw Lambda so large that the identity feels unfinished.
 
 ## Palette
 
@@ -379,7 +442,7 @@ Navigation should be tiny and protocol-like.
 Desktop:
 
 ```text
-left: small Affine text mark or mini mark
+left: Lambda micro mark
 center: ABOUT / RATIONALE / MECHANISM / LOGOS / DOCS
 right: optional external link
 ```
@@ -387,7 +450,7 @@ right: optional external link
 Mobile:
 
 ```text
-top left: mark
+top left: Lambda micro mark
 top right: MENU
 menu opens as a sparse full-screen blackpaper list
 ```
@@ -470,7 +533,7 @@ The first viewport must be understandable as a still image.
 Desktop structure:
 
 ```text
-top left: tiny Affine text mark or small symbol
+top left: Lambda micro mark
 top center: ABOUT / RATIONALE / MECHANISM / LOGOS / DOCS
 top right: optional WHITEPAPER or ENTER LOGOS
 
@@ -489,7 +552,7 @@ bottom center or lower field:
 Mobile structure:
 
 ```text
-top left: small Affine mark
+top left: Lambda micro mark
 top right: MENU
 
 center:
@@ -852,7 +915,7 @@ Mobile must preserve plainness.
 
 Rules:
 
-- nav collapses to mark + menu
+- nav collapses to Lambda micro mark + menu
 - mark remains central on home
 - theorem line should not wrap into awkward fragments
 - longform text gets generous side padding: 24px minimum
@@ -864,8 +927,8 @@ Rules:
 Mobile first viewport:
 
 ```text
-top: tiny mark / menu
-center: Affine mark
+top: Lambda micro mark / menu
+center: full Affine mark
 below: theorem line
 bottom: optional sequence line
 ```
@@ -960,7 +1023,7 @@ Before calling a design complete, answer:
 
 1. Does it look like a blackpaper counterpart to Bittensor?
 2. Does it communicate alignment, not generic AI?
-3. Is the Affine mark central and respected?
+3. Is Lambda used for small-size identity and the full Affine mark used for large identity?
 4. Is gold rare and meaningful?
 5. Does the first viewport avoid marketing clutter?
 6. Is the page mostly black, white, and silence?
@@ -981,7 +1044,7 @@ Score each category 0, 1, or 2.
 2. **Independence**
    0: feels like a clone
    1: has some Affine cues
-   2: clearly Affine through alignment, gold validation, and mark usage
+   2: clearly Affine through alignment, gold validation, Lambda, and full mark usage
 
 3. **Plainness**
    0: too much marketing/UI clutter
@@ -1042,10 +1105,11 @@ A 10/10 execution:
 4. Makes white feel like theorem, not generic text.
 5. Makes gold feel like validation, not decoration.
 6. Makes the Affine mark feel canonical.
-7. Uses Bittensor's restraint as a mirror, not a costume.
-8. Makes longform content feel worth reading.
-9. Makes diagrams feel like proof.
-10. Can be understood as a still image.
+7. Uses Lambda as the micro signature without making the system feel like a logo swap.
+8. Uses Bittensor's restraint as a mirror, not a costume.
+9. Makes longform content feel worth reading.
+10. Makes diagrams feel like proof.
+11. Can be understood as a still image.
 
 ## Final Art Direction
 
